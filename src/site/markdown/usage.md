@@ -26,7 +26,7 @@ For example, this sets up the key words for the project:
 
 Then that value can be acquired just by calling the tool.
 
-## Calling the tools
+## Calling the tool
 
 The $config key will call the tool:
 
@@ -39,6 +39,14 @@ $config.keywords
 By default the tool will call the get method, which will return a child from skinConfig with the same name.
 
 In the previous example it will look for the keywords node, and return its content as a node object, allowing additional processing of the data.
+
+### File id
+
+The tool can return a slugiffied version of the current file name through the fileId field:
+
+```
+$config.fileId
+```
 
 ## Usage examples
 
