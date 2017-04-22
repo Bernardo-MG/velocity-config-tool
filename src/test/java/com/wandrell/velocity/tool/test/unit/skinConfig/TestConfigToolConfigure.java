@@ -32,6 +32,7 @@ import org.apache.velocity.tools.ToolContext;
 import org.testng.annotations.Test;
 
 import com.wandrell.velocity.tool.ConfigTool;
+import com.wandrell.velocity.tool.ConfigToolConstants;
 
 /**
  * Unit tests for {@link ConfigTool}, testing the {@code configure} method to
@@ -65,7 +66,7 @@ public final class TestConfigToolConfigure {
         context = new ToolContext();
 
         map = new HashMap<>();
-        map.put(ConfigTool.VELOCITY_CONTEXT_KEY, context);
+        map.put(ConfigToolConstants.VELOCITY_CONTEXT_KEY, context);
 
         util.configure(map);
     }
@@ -85,10 +86,10 @@ public final class TestConfigToolConfigure {
         decoration = new DecorationModel();
 
         context = new ToolContext();
-        context.put(ConfigTool.DECORATION_KEY, decoration);
+        context.put(ConfigToolConstants.DECORATION_KEY, decoration);
 
         map = new HashMap<>();
-        map.put(ConfigTool.VELOCITY_CONTEXT_KEY, context);
+        map.put(ConfigToolConstants.VELOCITY_CONTEXT_KEY, context);
 
         util.configure(map);
     }

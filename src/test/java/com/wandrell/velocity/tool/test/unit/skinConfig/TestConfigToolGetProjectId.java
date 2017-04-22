@@ -34,6 +34,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.wandrell.velocity.tool.ConfigTool;
+import com.wandrell.velocity.tool.ConfigToolConstants;
 
 /**
  * Unit tests for {@link ConfigTool}, testing the {@code getProjectId} method.
@@ -166,10 +167,10 @@ public final class TestConfigToolGetProjectId {
         util = new ConfigTool();
 
         context = new ToolContext();
-        context.put(ConfigTool.MAVEN_PROJECT_KEY, project);
+        context.put(ConfigToolConstants.MAVEN_PROJECT_KEY, project);
 
         map = new HashMap<>();
-        map.put(ConfigTool.VELOCITY_CONTEXT_KEY, context);
+        map.put(ConfigToolConstants.VELOCITY_CONTEXT_KEY, context);
 
         util.configure(map);
 
@@ -193,10 +194,10 @@ public final class TestConfigToolGetProjectId {
         util = new ConfigTool();
 
         context = new ToolContext();
-        context.put(ConfigTool.MAVEN_PROJECT_KEY, project);
+        context.put(ConfigToolConstants.MAVEN_PROJECT_KEY, project);
 
         map = new HashMap<>();
-        map.put(ConfigTool.VELOCITY_CONTEXT_KEY, context);
+        map.put(ConfigToolConstants.VELOCITY_CONTEXT_KEY, context);
 
         util.configure(map);
 

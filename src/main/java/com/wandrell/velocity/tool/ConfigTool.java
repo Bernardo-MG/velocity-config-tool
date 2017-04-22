@@ -68,70 +68,28 @@ import org.codehaus.plexus.util.xml.Xpp3Dom;
 public final class ConfigTool extends SafeConfig {
 
     /**
-     * The key identifying the current file name in the velocity context.
-     */
-    public static final String CURRENT_FILE_NAME_KEY = "currentFileName";
-
-    /**
-     * The key identifying the decoration in the velocity context.
-     */
-    public static final String DECORATION_KEY        = "decoration";
-
-    /**
-     * The key identifying the Maven project.
-     */
-    public static final String MAVEN_PROJECT_KEY     = "project";
-
-    /**
-     * Key for the skin configuration.
-     * <p>
-     * This is the name of the node inside the site.xml file where the skin's
-     * configuration is stored.
-     * <p>
-     * It will be a node inside the custom node, with the project node at the
-     * root, like this:
-     * 
-     * <pre>
-     * {@code <project>
-     *   <custom>
-     *      <skinConfig></skinConfig>
-     *   </custom>
-     * </project>}
-     * </pre>
-     * <p>
-     * That is, if the default value of skinConfig is kept.
-     */
-    public static final String SKIN_KEY              = "skinConfig";
-
-    /**
-     * The key identifying the velocity context.
-     */
-    public static final String VELOCITY_CONTEXT_KEY  = "velocityContext";
-
-    /**
      * Identifier for the current file.
      * <p>
      * This is a slug created from the current file's name.
      */
-    private String             fileId;
+    private String        fileId;
 
     /**
      * Regex for multiple line separators.
      */
-    private final Pattern      multipleLineSeparator = Pattern.compile("-+");
+    private final Pattern multipleLineSeparator = Pattern.compile("-+");
 
     /**
      * Regex for non-latin characters.
      */
-    private final Pattern      nonLatin              = Pattern
-            .compile("[^\\w-]");
+    private final Pattern nonLatin              = Pattern.compile("[^\\w-]");
 
     /**
      * Identifier for the project.
      * <p>
      * This is a slug created from the artifact id contained in the POM file.
      */
-    private String             projectId;
+    private String        projectId;
 
     /**
      * Skin configuration node.
@@ -139,12 +97,12 @@ public final class ConfigTool extends SafeConfig {
      * This is the {@code <skinConfig>} located in the site.xml file, inside the
      * {@code <custom>} node.
      */
-    private Xpp3Dom            skinConfig            = new Xpp3Dom("");
+    private Xpp3Dom       skinConfig            = new Xpp3Dom("");
 
     /**
      * Regex for whitespaces.
      */
-    private final Pattern      whitespace            = Pattern.compile("[\\s]");
+    private final Pattern whitespace            = Pattern.compile("[\\s]");
 
     /**
      * Constructs an instance of the {@code SkinConfigUtil}.
@@ -287,8 +245,9 @@ public final class ConfigTool extends SafeConfig {
         final Object currentFileObj; // File's name as received
         String currentFile;          // File's name
 
-        if (context.containsKey(CURRENT_FILE_NAME_KEY)) {
-            currentFileObj = context.get(CURRENT_FILE_NAME_KEY);
+        if (context.containsKey(ConfigToolConstants.CURRENT_FILE_NAME_KEY)) {
+            currentFileObj = context
+                    .get(ConfigToolConstants.CURRENT_FILE_NAME_KEY);
             if (currentFileObj == null) {
                 setFileId("");
             } else {
@@ -321,8 +280,8 @@ public final class ConfigTool extends SafeConfig {
         final MavenProject project; // Casted project info
         final String artifactId;    // Maven artifact id
 
-        if (context.containsKey(MAVEN_PROJECT_KEY)) {
-            projectObj = context.get(MAVEN_PROJECT_KEY);
+        if (context.containsKey(ConfigToolConstants.MAVEN_PROJECT_KEY)) {
+            projectObj = context.get(ConfigToolConstants.MAVEN_PROJECT_KEY);
             if (projectObj instanceof MavenProject) {
                 project = (MavenProject) projectObj;
                 artifactId = project.getArtifactId();
@@ -362,7 +321,7 @@ public final class ConfigTool extends SafeConfig {
             customNode = (Xpp3Dom) customObj;
 
             // Acquires <skinConfig> node
-            skinNode = customNode.getChild(SKIN_KEY);
+            skinNode = customNode.getChild(ConfigToolConstants.SKIN_KEY);
 
             if (skinNode == null) {
                 setSkinConfig(new Xpp3Dom(""));
@@ -450,7 +409,7 @@ public final class ConfigTool extends SafeConfig {
 
         checkNotNull(values, "Received a null pointer as values");
 
-        velocityContext = values.get(VELOCITY_CONTEXT_KEY);
+        velocityContext = values.get(ConfigToolConstants.VELOCITY_CONTEXT_KEY);
 
         if (velocityContext instanceof ToolContext) {
             ctxt = (ToolContext) velocityContext;
@@ -459,7 +418,7 @@ public final class ConfigTool extends SafeConfig {
 
             loadFileId(ctxt);
 
-            decorationObj = ctxt.get(DECORATION_KEY);
+            decorationObj = ctxt.get(ConfigToolConstants.DECORATION_KEY);
             if (decorationObj instanceof DecorationModel) {
                 processDecoration((DecorationModel) decorationObj);
             }
