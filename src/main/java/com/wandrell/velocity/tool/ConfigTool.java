@@ -97,7 +97,7 @@ public final class ConfigTool extends SafeConfig {
     private final Pattern whitespace            = Pattern.compile("[\\s]");
 
     /**
-     * Constructs an instance of the {@code SkinConfigUtil}.
+     * Constructs an instance of the {@code ConfigTool}.
      */
     public ConfigTool() {
         super();
