@@ -38,7 +38,7 @@ import com.wandrell.velocity.tool.ConfigTool;
 /**
  * Unit tests for {@link ConfigTool}, testing the {@code getProjectId} method.
  * 
- * @author Bernardo Martínez Garrido
+ * @author Bernardo Mart&iacute;nez Garrido
  * @see ConfigTool
  */
 public final class TestConfigToolGetProjectId {

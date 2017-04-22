@@ -62,7 +62,7 @@ import org.codehaus.plexus.util.xml.Xpp3Dom;
  * Skin</a>.
  * 
  * @author Andrius Velykis
- * @author Bernardo Martínez Garrido
+ * @author Bernardo Mart&iacute;nez Garrido
  */
 @DefaultKey("config")
 public final class ConfigTool extends SafeConfig {

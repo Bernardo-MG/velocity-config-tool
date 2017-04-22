@@ -39,7 +39,7 @@ import com.wandrell.velocity.tool.ConfigTool;
  * <p>
  * These are just smoke tests to verify the class does not break in these cases.
  * 
- * @author Bernardo Martínez Garrido
+ * @author Bernardo Mart&iacute;nez Garrido
  * @see ConfigTool
  */
 public final class TestConfigToolConfigure {
