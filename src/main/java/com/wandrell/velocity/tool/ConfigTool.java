@@ -29,7 +29,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import java.util.regex.Pattern;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
-import org.apache.maven.project.MavenProject;
 import org.apache.velocity.tools.ToolContext;
 import org.apache.velocity.tools.config.DefaultKey;
 import org.apache.velocity.tools.generic.SafeConfig;
@@ -83,13 +82,6 @@ public final class ConfigTool extends SafeConfig {
      * Regex for non-latin characters.
      */
     private final Pattern nonLatin              = Pattern.compile("[^\\w-]");
-
-    /**
-     * Identifier for the project.
-     * <p>
-     * This is a slug created from the artifact id contained in the POM file.
-     */
-    private String        projectId;
 
     /**
      * Skin configuration node.
@@ -153,20 +145,6 @@ public final class ConfigTool extends SafeConfig {
      */
     public final String getFileId() {
         return fileId;
-    }
-
-    /**
-     * Returns the project identifier.
-     * <p>
-     * This is the slugged artifact id from the POM file.
-     * <p>
-     * It can be called through Velocity with the command
-     * {@code $config.projectId}.
-     * 
-     * @return the project id
-     */
-    public final String getProjectId() {
-        return projectId;
     }
 
     /**
@@ -268,38 +246,6 @@ public final class ConfigTool extends SafeConfig {
     }
 
     /**
-     * Loads the project identifier from the velocity tools context.
-     * <p>
-     * This is generated from the artifact id on the POM file.
-     * 
-     * @param context
-     *            the Velocity tools context
-     */
-    private final void loadProjectId(final ToolContext context) {
-        final Object projectObj;    // Object with the project info
-        final MavenProject project; // Casted project info
-        final String artifactId;    // Maven artifact id
-
-        if (context.containsKey(ConfigToolConstants.MAVEN_PROJECT_KEY)) {
-            projectObj = context.get(ConfigToolConstants.MAVEN_PROJECT_KEY);
-            if (projectObj instanceof MavenProject) {
-                project = (MavenProject) projectObj;
-                artifactId = project.getArtifactId();
-                if (artifactId == null) {
-                    setProjectId("");
-                } else {
-                    // The artifact id is slugged for the project id
-                    setProjectId(slug(artifactId));
-                }
-            } else {
-                setProjectId("");
-            }
-        } else {
-            setProjectId("");
-        }
-    }
-
-    /**
      * Processes the decoration model, acquiring the skin and page
      * configuration.
      * <p>
@@ -339,16 +285,6 @@ public final class ConfigTool extends SafeConfig {
      */
     private final void setFileId(final String id) {
         fileId = id;
-    }
-
-    /**
-     * Sets the project identifier.
-     * 
-     * @param id
-     *            the project identifier
-     */
-    private final void setProjectId(final String id) {
-        projectId = id;
     }
 
     /**
@@ -413,8 +349,6 @@ public final class ConfigTool extends SafeConfig {
 
         if (velocityContext instanceof ToolContext) {
             ctxt = (ToolContext) velocityContext;
-
-            loadProjectId(ctxt);
 
             loadFileId(ctxt);
 
