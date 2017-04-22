@@ -53,8 +53,8 @@ import org.codehaus.plexus.util.xml.Xpp3Dom;
  * Any value stored there can be acquired through the use of the
  * {@link #get(String) get} method.
  * <p>
- * Unlike other utilities classes in the project, this one is stateful, as it
- * binds itself to the context and data of the page being rendered.
+ * This tool is stateful, as it binds itself to the context and data of the page
+ * being rendered.
  * <p>
  * This class has been created from the Skin Config Tool class from the
  * <a href="http://andriusvelykis.github.io/reflow-maven-skin/">Reflow Maven
