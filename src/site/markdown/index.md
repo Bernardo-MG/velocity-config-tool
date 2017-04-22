@@ -28,11 +28,6 @@ Just invoke the tool like this:
 $config.keywords
 ```
 
-### Tool id
-
-The tool is configured to use the $config id.
-
-
 [docs-skin]: https://github.com/Bernardo-MG/docs-maven-skin
 [maven_site]: https://maven.apache.org/plugins/maven-site-plugin/
 [velocity]: http://velocity.apache.org/
