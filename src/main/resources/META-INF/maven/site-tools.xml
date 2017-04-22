@@ -3,9 +3,6 @@
    the classpath and Velocity finds it. -->
 <tools>
    <toolbox scope="request">
-      <tool class="com.wandrell.velocity.tool.Html5UpdateUtils" />
-      <tool class="com.wandrell.velocity.tool.HtmlUtils" />
-      <tool class="com.wandrell.velocity.tool.SiteUtils" />
-      <tool class="com.wandrell.velocity.tool.SkinConfigUtils" />
+      <tool class="com.wandrell.velocity.tool.ConfigTool" />
    </toolbox>
 </tools>
