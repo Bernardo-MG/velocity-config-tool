@@ -56,7 +56,7 @@ public final class TestConfigToolGetFileId {
     public final void testGetFileId_ConsecutivePoints_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("path-to\\file_name..something.html");
+        util = getConfigTool("path-to\\file_name..something.html");
 
         Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
     }
@@ -68,7 +68,7 @@ public final class TestConfigToolGetFileId {
     public final void testGetFileId_EmptyFile_EmptyId() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("");
+        util = getConfigTool("");
 
         Assert.assertEquals(util.getFileId(), "");
     }
@@ -80,7 +80,7 @@ public final class TestConfigToolGetFileId {
     public final void testGetFileId_MultiplePoints_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("path-to\\file_name.something.html");
+        util = getConfigTool("path-to\\file_name.something.html");
 
         Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
     }
@@ -92,7 +92,7 @@ public final class TestConfigToolGetFileId {
     public final void testGetFileId_MultipleSeparators_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("path-to\\file_name---something.html");
+        util = getConfigTool("path-to\\file_name---something.html");
 
         Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
     }
@@ -104,7 +104,7 @@ public final class TestConfigToolGetFileId {
     public final void testGetFileId_NoExtension_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("path-to\\file_name");
+        util = getConfigTool("path-to\\file_name");
 
         Assert.assertEquals(util.getFileId(), "path-to-file-name");
     }
@@ -116,7 +116,7 @@ public final class TestConfigToolGetFileId {
     public final void testGetFileId_NullFile_EmptyId() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils(null);
+        util = getConfigTool(null);
 
         Assert.assertEquals(util.getFileId(), "");
     }
@@ -128,7 +128,7 @@ public final class TestConfigToolGetFileId {
     public final void testGetFileId_OnlyExtension_Empty() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils(".html");
+        util = getConfigTool(".html");
 
         Assert.assertEquals(util.getFileId(), "");
     }
@@ -140,7 +140,7 @@ public final class TestConfigToolGetFileId {
     public final void testGetFileId_ValidFile_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("path-to\\file_name.html");
+        util = getConfigTool("path-to\\file_name.html");
 
         Assert.assertEquals(util.getFileId(), "path-to-file-name");
     }
@@ -152,7 +152,7 @@ public final class TestConfigToolGetFileId {
      *            name of the current file
      * @return the utilities class to test
      */
-    private final ConfigTool getSkinConfigUtils(final String fileName) {
+    private final ConfigTool getConfigTool(final String fileName) {
         final ConfigTool util;         // Utilities class to test
         final Map<Object, Object> map; // Configuration map
         final ToolContext context;     // Velocity context

@@ -58,7 +58,7 @@ public final class TestConfigToolGetProjectId {
     public final void testgetProjectId_BeginsWithPoint_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils(".project");
+        util = getConfigTool(".project");
 
         Assert.assertEquals(util.getProjectId(), "-project");
     }
@@ -70,7 +70,7 @@ public final class TestConfigToolGetProjectId {
     public final void testgetProjectId_ConsecutivePoints_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("project..something.name");
+        util = getConfigTool("project..something.name");
 
         Assert.assertEquals(util.getProjectId(), "project-something-name");
     }
@@ -82,7 +82,7 @@ public final class TestConfigToolGetProjectId {
     public final void testgetProjectId_EmptyName_EmptyId() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("");
+        util = getConfigTool("");
 
         Assert.assertEquals(util.getProjectId(), "");
     }
@@ -94,7 +94,7 @@ public final class TestConfigToolGetProjectId {
     public final void testgetProjectId_MultiplePoints_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("project.something.name");
+        util = getConfigTool("project.something.name");
 
         Assert.assertEquals(util.getProjectId(), "project-something-name");
     }
@@ -107,7 +107,7 @@ public final class TestConfigToolGetProjectId {
     public final void testgetProjectId_MultipleSeparators_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("project---name");
+        util = getConfigTool("project---name");
 
         Assert.assertEquals(util.getProjectId(), "project-name");
     }
@@ -119,7 +119,7 @@ public final class TestConfigToolGetProjectId {
     public final void testgetProjectId_NoMavenProject_EmptyId() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtilsNoMavenProject();
+        util = getConfigToolNoMavenProject();
 
         Assert.assertEquals(util.getProjectId(), "");
     }
@@ -131,7 +131,7 @@ public final class TestConfigToolGetProjectId {
     public final void testgetProjectId_NullName_EmptyId() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils(null);
+        util = getConfigTool(null);
 
         Assert.assertEquals(util.getProjectId(), "");
     }
@@ -143,7 +143,7 @@ public final class TestConfigToolGetProjectId {
     public final void testgetProjectId_ValidName_Slugged() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("project-name");
+        util = getConfigTool("project-name");
 
         Assert.assertEquals(util.getProjectId(), "project-name");
     }
@@ -155,7 +155,7 @@ public final class TestConfigToolGetProjectId {
      *            name of the project
      * @return the utilities class to test
      */
-    private final ConfigTool getSkinConfigUtils(final String projectName) {
+    private final ConfigTool getConfigTool(final String projectName) {
         final ConfigTool util;         // Utilities class to test
         final Map<Object, Object> map; // Configuration map
         final ToolContext context;     // Velocity context
@@ -183,7 +183,7 @@ public final class TestConfigToolGetProjectId {
      * 
      * @return the utilities class to test
      */
-    private final ConfigTool getSkinConfigUtilsNoMavenProject() {
+    private final ConfigTool getConfigToolNoMavenProject() {
         final ConfigTool util; // Utilities class to test
         final Map<Object, Object> map; // Configuration map
         final ToolContext context;  // Velocity context

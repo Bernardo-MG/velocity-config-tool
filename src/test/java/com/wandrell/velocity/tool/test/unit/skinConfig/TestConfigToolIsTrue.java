@@ -59,7 +59,7 @@ public final class TestConfigToolIsTrue {
     public final void testIsTrue_False_False() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("key", "false");
+        util = getConfigTool("key", "false");
 
         Assert.assertTrue(!util.isTrue("key"));
     }
@@ -71,7 +71,7 @@ public final class TestConfigToolIsTrue {
     public final void testIsTrue_NotExisting_False() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("", "");
+        util = getConfigTool("", "");
 
         Assert.assertTrue(!util.isTrue("ABC"));
     }
@@ -83,7 +83,7 @@ public final class TestConfigToolIsTrue {
     public final void testIsTrue_Null_False() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("key", null);
+        util = getConfigTool("key", null);
 
         Assert.assertTrue(!util.isTrue("key"));
     }
@@ -95,7 +95,7 @@ public final class TestConfigToolIsTrue {
     public final void testIsTrue_True_True() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("key", "true");
+        util = getConfigTool("key", "true");
 
         Assert.assertTrue(util.isTrue("key"));
     }
@@ -109,7 +109,7 @@ public final class TestConfigToolIsTrue {
      *            value for the value set
      * @return the utilities class to test
      */
-    private final ConfigTool getSkinConfigUtils(final String key,
+    private final ConfigTool getConfigTool(final String key,
             final String value) {
         final ConfigTool util;         // Utilities class to test
         final Map<Object, Object> map; // Configuration map

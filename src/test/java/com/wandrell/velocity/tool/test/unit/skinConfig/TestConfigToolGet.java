@@ -59,7 +59,7 @@ public final class TestConfigToolGet {
     public final void testGet_ExpectedKey() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("key", "value");
+        util = getConfigTool("key", "value");
 
         Assert.assertEquals(util.get("key").getName(), "key");
     }
@@ -71,7 +71,7 @@ public final class TestConfigToolGet {
     public final void testGet_ExpectedValue() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("key", "value");
+        util = getConfigTool("key", "value");
 
         Assert.assertEquals(util.get("key").getValue(), "value");
     }
@@ -83,7 +83,7 @@ public final class TestConfigToolGet {
     public final void testGet_NotExisting_ReturnsNull() {
         final ConfigTool util; // Utilities class to test
 
-        util = getSkinConfigUtils("", "");
+        util = getConfigTool("", "");
 
         Assert.assertEquals(util.get("key"), null);
     }
@@ -97,7 +97,7 @@ public final class TestConfigToolGet {
      *            value for the value set
      * @return the utilities class to test
      */
-    private final ConfigTool getSkinConfigUtils(final String key,
+    private final ConfigTool getConfigTool(final String key,
             final String value) {
         final ConfigTool util;         // Utilities class to test
         final Map<Object, Object> map; // Configuration map
