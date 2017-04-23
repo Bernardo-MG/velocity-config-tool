@@ -28,6 +28,11 @@ import org.apache.velocity.tools.config.DefaultKey;
 
 /**
  * Constants for the configuration tool.
+ * <p>
+ * The {@link #SKIN_KEY} field contains the name for the node containing the
+ * configuration. Changing this will change the configuration location.
+ * <p>
+ * All the other constants should not be modified.
  * 
  * @author Bernardo Mart&iacute;nez Garrido
  */

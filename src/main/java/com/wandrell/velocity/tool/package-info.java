@@ -23,9 +23,6 @@
  */
 /**
  * Provides Velocity tools classes.
- * <p>
- * The {@link com.wandrell.velocity.tool.ConfigTool ConfigTool} offers a way to
- * acquire the skin configuration from a Velocity template.
  */
 
 package com.wandrell.velocity.tool;

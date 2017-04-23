@@ -60,7 +60,6 @@ import org.codehaus.plexus.util.xml.Xpp3Dom;
  * <a href="http://andriusvelykis.github.io/reflow-maven-skin/">Reflow Maven
  * Skin</a>.
  * 
- * @author Andrius Velykis
  * @author Bernardo Mart&iacute;nez Garrido
  */
 @DefaultKey("config")
