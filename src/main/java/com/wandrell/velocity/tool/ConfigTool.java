@@ -74,14 +74,14 @@ public final class ConfigTool extends SafeConfig {
     private String        fileId;
 
     /**
-     * Regex for multiple line separators.
+     * Regex for multiple hyphens.
      */
-    private final Pattern multipleLineSeparator = Pattern.compile("-+");
+    private final Pattern multipleHyphen = Pattern.compile("-+");
 
     /**
      * Regex for non-latin characters.
      */
-    private final Pattern nonLatin              = Pattern.compile("[^\\w-]");
+    private final Pattern nonLatin       = Pattern.compile("[^\\w-]");
 
     /**
      * Skin configuration node.
@@ -89,12 +89,12 @@ public final class ConfigTool extends SafeConfig {
      * This is the {@code <skinConfig>} located in the site.xml file, inside the
      * {@code <custom>} node.
      */
-    private Xpp3Dom       skinConfig            = new Xpp3Dom("");
+    private Xpp3Dom       skinConfig     = new Xpp3Dom("");
 
     /**
      * Regex for whitespaces.
      */
-    private final Pattern whitespace            = Pattern.compile("[\\s]");
+    private final Pattern whitespace     = Pattern.compile("[\\s]");
 
     /**
      * Constructs an instance of the {@code ConfigTool}.
@@ -175,12 +175,12 @@ public final class ConfigTool extends SafeConfig {
     }
 
     /**
-     * Returns the regular expression for multiple line separators.
+     * Returns the regular expression for multiple hyphens.
      * 
-     * @return the regular expression for multiple line separators
+     * @return the regular expression for multiple hyphens
      */
-    private final Pattern getMultipleLineSeparatorPattern() {
-        return multipleLineSeparator;
+    private final Pattern getMultipleHyphenPattern() {
+        return multipleHyphen;
     }
 
     /**
@@ -326,7 +326,7 @@ public final class ConfigTool extends SafeConfig {
                 .replace('_', '-');
 
         // Removes multiple lines
-        corrected = getMultipleLineSeparatorPattern().matcher(corrected)
+        corrected = getMultipleHyphenPattern().matcher(corrected)
                 .replaceAll(separator);
         // Removes white spaces
         corrected = getWhitespacePattern().matcher(corrected)
