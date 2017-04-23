@@ -25,8 +25,17 @@ Having a keywords tag set as follows in the site.xml:
 Just invoke the tool like this:
 
 ```
-$config.keywords
+<html>
+   <head>
+      ...
+      <meta name="keywords" content="$config.keywords.getValue()">
+      ...
+   </head>
+   ...
+<html>
 ```
+
+And the keywords will be set into the template.
 
 [docs-skin]: https://github.com/Bernardo-MG/docs-maven-skin
 [maven_site]: https://maven.apache.org/plugins/maven-site-plugin/

@@ -31,7 +31,14 @@ Then that value can be acquired just by calling the tool.
 The $config key will call the tool:
 
 ```
-$config.keywords
+<html>
+   <head>
+      ...
+      <meta name="keywords" content="$config.keywords.getValue()">
+      ...
+   </head>
+   ...
+<html>
 ```
 
 ### Getting values

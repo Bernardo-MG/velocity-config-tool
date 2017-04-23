@@ -64,8 +64,17 @@ Having a keywords tag set as follows in the site.xml:
 Just invoke the tool like this:
 
 ```
-$config.keywords
+<html>
+   <head>
+      ...
+      <meta name="keywords" content="$config.keywords.getValue()">
+      ...
+   </head>
+   ...
+<html>
 ```
+
+And the keywords will be set into the template.
 
 More information can be found in the documentation pages.
 
