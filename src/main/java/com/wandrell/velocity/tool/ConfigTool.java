@@ -60,10 +60,6 @@ import org.codehaus.plexus.util.xml.Xpp3Dom;
  * <p>
  * This tool is stateful, as it binds itself to the context and data of the page
  * being rendered.
- * <p>
- * This class has been created from the Skin Config Tool class from the
- * <a href="http://andriusvelykis.github.io/reflow-maven-skin/">Reflow Maven
- * Skin</a>.
  * 
  * @author Bernardo Mart&iacute;nez Garrido
  */
@@ -137,33 +133,6 @@ public final class ConfigTool extends SafeConfig {
      */
     public final String getFileId() {
         return fileId;
-    }
-
-    /**
-     * Returns the boolean value of a property's value.
-     * <p>
-     * This will transform whatever value the property has assigned to a
-     * boolean.
-     * 
-     * @param property
-     *            the property to check
-     * @return the property's value transformed to a boolean
-     */
-    public final Boolean isTrue(final String property) {
-        final Xpp3Dom value;  // Node with the property's value
-        final Boolean result; // Value transformed to a boolean
-
-        checkNotNull(property, "Received a null pointer as property");
-
-        value = get(property);
-
-        if (value == null) {
-            result = false;
-        } else {
-            result = Boolean.valueOf(value.getValue());
-        }
-
-        return result;
     }
 
     /**
