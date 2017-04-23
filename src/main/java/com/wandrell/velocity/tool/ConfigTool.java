@@ -332,6 +332,9 @@ public final class ConfigTool extends SafeConfig {
         return corrected.toLowerCase();
     }
 
+    /**
+     * Sets up the tool with the skin configuration and file id.
+     */
     @Override
     protected final void configure(final ValueParser values) {
         final Object velocityContext; // Value from the parser
