@@ -25,7 +25,6 @@
 package com.wandrell.velocity.tool;
 
 import org.apache.velocity.tools.config.DefaultKey;
-import org.apache.velocity.tools.generic.SafeConfig;
 
 /**
  * Constants for the configuration tool.
@@ -33,7 +32,7 @@ import org.apache.velocity.tools.generic.SafeConfig;
  * @author Bernardo Mart&iacute;nez Garrido
  */
 @DefaultKey("config")
-public final class ConfigToolConstants extends SafeConfig {
+public final class ConfigToolConstants {
 
     /**
      * The key identifying the current file name in the velocity context.
