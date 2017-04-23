@@ -39,88 +39,52 @@ import com.wandrell.velocity.tool.ConfigToolConstants;
 
 /**
  * Unit tests for {@link ConfigTool}, testing the {@code get} method.
+ * <p>
+ * These test use an invalid context, missing part of the required data.
  * 
  * @author Bernardo Mart&iacute;nez Garrido
  * @see ConfigTool
  */
-public final class TestConfigToolGet {
+public final class TestConfigToolGetMissingData {
 
     /**
      * Default constructor.
      */
-    public TestConfigToolGet() {
+    public TestConfigToolGetMissingData() {
         super();
-    }
-
-    /**
-     * Tests that the get method returns a node with the the expected key.
-     */
-    @Test
-    public final void testGet_ExpectedKey() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("key", "value");
-
-        Assert.assertEquals(util.get("key").getName(), "key");
-    }
-
-    /**
-     * Tests that the get method returns a node with the the expected value.
-     */
-    @Test
-    public final void testGet_ExpectedValue() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("key", "value");
-
-        Assert.assertEquals(util.get("key").getValue(), "value");
     }
 
     /**
      * Tests that the get method returns a null for not existing values.
      */
     @Test
-    public final void testGet_NotExisting_ReturnsNull() {
+    public final void testGet_NoSkinConfig_ReturnsNull() {
         final ConfigTool util; // Utilities class to test
 
-        util = getConfigTool("", "");
+        util = getConfigToolNoSkinNode();
 
         Assert.assertEquals(util.get("key"), null);
     }
 
     /**
      * Returns the utilities class being tested, set up for the tests.
+     * <p>
+     * The contained configuration is missing the skin config node.
      * 
-     * @param key
-     *            key for the value set
-     * @param value
-     *            value for the value set
      * @return the utilities class to test
      */
-    private final ConfigTool getConfigTool(final String key,
-            final String value) {
+    private final ConfigTool getConfigToolNoSkinNode() {
         final ConfigTool util;         // Utilities class to test
         final Map<Object, Object> map; // Configuration map
         final ToolContext context;     // Velocity context
         final DecorationModel deco;    // Decoration model
         final Xpp3Dom customNode;      // <custom> node
-        final Xpp3Dom skinNode;        // <skinConfig> node
-        final Xpp3Dom valueNode;       // Node with the test value
         final String currentFile;      // Current page
 
         currentFile = "page";
 
-        // Creates test value node
-        valueNode = new Xpp3Dom(key);
-        valueNode.setValue(value);
-
-        // Creates skin node
-        skinNode = new Xpp3Dom(ConfigToolConstants.SKIN_KEY);
-        skinNode.addChild(valueNode);
-
         // Creates custom data node
         customNode = new Xpp3Dom("custom");
-        customNode.addChild(skinNode);
 
         // Creates decoration model
         deco = Mockito.mock(DecorationModel.class);
