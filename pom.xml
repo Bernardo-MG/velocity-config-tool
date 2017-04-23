@@ -204,6 +204,7 @@
       <doxia.decoration.version>1.7.4</doxia.decoration.version>
       <guava.version>20.0</guava.version>
       <mockito.version>1.10.19</mockito.version>
+      <plexus.version>3.0.24</plexus.version>
       <testng.version>6.10</testng.version>
       <velocity.tools.version>2.0</velocity.tools.version>
       <!-- ============================================== -->
@@ -230,6 +231,12 @@
          <groupId>com.google.guava</groupId>
          <artifactId>guava</artifactId>
          <version>${guava.version}</version>
+      </dependency>
+      <dependency>
+         <!-- Plexus Utils -->
+         <groupId>org.codehaus.plexus</groupId>
+         <artifactId>plexus-utils</artifactId>
+         <version>${plexus.version}</version>
       </dependency>
       <dependency>
          <!-- Velocity Tools -->
