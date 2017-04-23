@@ -107,8 +107,9 @@ If you wish to fork or modify the code, visit the [GitHub project page][scm], wh
 
 The project has been released under the [MIT License][license].
 
-[velocity]: http://velocity.apache.org/
+[maven_site]: https://maven.apache.org/plugins/maven-site-plugin/
 [reflow-skin]: https://github.com/andriusvelykis/reflow-maven-skin
+[velocity]: http://velocity.apache.org/
 
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/velocity-config-tool/view
 [maven-repo]: http://mvnrepository.com/artifact/com.wandrell.velocity/velocity-config-tool
