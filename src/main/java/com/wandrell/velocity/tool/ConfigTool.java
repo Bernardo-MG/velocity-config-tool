@@ -51,7 +51,12 @@ import org.codehaus.plexus.util.xml.Xpp3Dom;
  * </pre>
  * <p>
  * Any value stored there can be acquired through the use of the
- * {@link #get(String) get} method.
+ * {@link #get(String) get} method. Note that thanks to Velocity inside a
+ * template any getter can be replaced by the field it returns, and this works
+ * with the {@code get} method too.
+ * <p>
+ * This means that instead of using {@code $config.get("myproperty")}, the same
+ * value can be acquired with {@code $config.myproperty}.
  * <p>
  * This tool is stateful, as it binds itself to the context and data of the page
  * being rendered.
@@ -85,8 +90,8 @@ public final class ConfigTool extends SafeConfig {
     /**
      * Skin configuration node.
      * <p>
-     * This is the {@code <skinConfig>} located in the site.xml file, inside the
-     * {@code <custom>} node.
+     * This contains the custom configuration for the skin, as set inside the
+     * site.xml file, inside the {@code <custom>} node.
      */
     private Xpp3Dom       skinConfig     = new Xpp3Dom("");
 
@@ -105,40 +110,28 @@ public final class ConfigTool extends SafeConfig {
     /**
      * Returns a configuration's node property.
      * <p>
-     * This will be the data on the site.xml file where the node is called like
-     * the property.
-     * <p>
-     * Thanks to Velocity, instead of using {@code $config.get("myproperty")},
-     * this method can be called as a getter by using {@code $config.myproperty}
-     * .
-     * <p>
-     * The method will look for the property first in the page configuration. If
-     * it is not found there, then it looks for it in the global configuration.
-     * If again it is not found, then the {@code null} value is returned.
+     * This node will be acquired from the custom skin configuration inside the
+     * site.xml file. If there is no node with a matching name then the returned
+     * value will be {@code null}.
      * 
      * @param property
-     *            the property being queried
-     * @return the value assigned to the property in the page or the global
-     *         properties
+     *            the property being acquired
+     * @return the value assigned to the property in the skin custom
+     *         configuration
      */
     public final Xpp3Dom get(final String property) {
-        Xpp3Dom value; // Node with the property's value
-
         checkNotNull(property, "Received a null pointer as property");
 
-        // Looks for it in the global properties
-        value = getSkinConfig().getChild(property);
-
-        return value;
+        return getSkinConfig().getChild(property);
     }
 
     /**
      * Returns the file identifier.
      * <p>
-     * This is the slugged current file name.
+     * This is a slugged version of the current file name.
      * <p>
-     * It can be called through Velocity with the command {@code $config.fileId}
-     * .
+     * With Velocity the value can be acquired by using the command
+     * {@code $config.fileId}.
      * 
      * @return the file identifier
      */
@@ -193,6 +186,9 @@ public final class ConfigTool extends SafeConfig {
 
     /**
      * Returns the skin config node.
+     * <p>
+     * This contains the custom configuration for the skin, as set inside the
+     * site.xml file, inside the {@code <custom>} node.
      * 
      * @return the skin config node
      */
