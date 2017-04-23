@@ -12,8 +12,7 @@
    <custom>
       <skinConfig>
          <keywords>Velocity tool, configuration</keywords>
-         <descriptionUrl>Check the documentation for the Maven Site
-            Fixer</descriptionUrl>
+         <descriptionUrl>Check the documentation for the Velocity Config Tool</descriptionUrl>
          <twitterSite>@Wandrell_BMG</twitterSite>
          <topNav>
             <menu>Documentation</menu>
@@ -40,6 +39,7 @@
       <menu name="Documentation" inherit="bottom">
          <item name="Acquire" href="./acquire.html" />
          <item name="Usage" href="./usage.html" />
+         <item name="Examples" href="./examples.html" />
          <item name="Customizing" href="./customizing.html" />
       </menu>
       <menu name="Info and reports" inherit="bottom">
