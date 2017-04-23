@@ -394,6 +394,7 @@
             <artifactId>maven-javadoc-plugin</artifactId>
             <configuration>
                <links>
+                  <link>https://codehaus-plexus.github.io/plexus-utils/apidocs/</link>
                   <link>https://velocity.apache.org/tools/devel/apidocs/</link>
                </links>
             </configuration>
