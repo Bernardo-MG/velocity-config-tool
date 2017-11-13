@@ -11,7 +11,10 @@
             First release of the library.
          </action>
       </release>
-      <release version="1.0.1" date="2017-04-22" description="Restored OJDK tests">
+      <release version="1.0.1" date="2017-11-13" description="Relocation">
+         <action dev="bmg" type="add">
+            Prepared for Maven relocation.
+         </action>
          <action dev="bmg" type="fix">
             Restored open JDK7 tests.
          </action>
