@@ -15,9 +15,6 @@
          <action dev="bmg" type="add">
             Prepared for Maven relocation.
          </action>
-         <action dev="bmg" type="fix">
-            Restored open JDK7 tests.
-         </action>
       </release>
    </body>
 </document>
