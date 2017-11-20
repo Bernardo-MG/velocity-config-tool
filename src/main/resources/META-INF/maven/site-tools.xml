@@ -3,6 +3,6 @@
    the classpath and Velocity finds it. -->
 <tools>
    <toolbox scope="request">
-      <tool class="com.wandrell.velocity.tool.ConfigTool" />
+      <tool class="com.bernardomg.velocity.tool.ConfigTool" />
    </toolbox>
 </tools>

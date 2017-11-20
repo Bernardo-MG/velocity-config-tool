@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE xml>
 <Configuration status="WARN">
 
    <Properties>
-      <Property name="filename">velocity_config_tool_test.log</Property>
+      <Property name="filename">test.log</Property>
    </Properties>
 
    <Appenders>
       <Console name="console" target="SYSTEM_OUT">
-         <PatternLayout
-            pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+         <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
       </Console>
 
       <File name="file" fileName="${filename}">
          <PatternLayout>
-            <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
-            </Pattern>
+            <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
          </PatternLayout>
       </File>
    </Appenders>
 
    <Loggers>
-      <Logger name="com.wandrell" level="debug" additivity="false">
+      <Logger name="com.bernardomg" level="debug" additivity="false">
          <AppenderRef ref="file" />
       </Logger>
 

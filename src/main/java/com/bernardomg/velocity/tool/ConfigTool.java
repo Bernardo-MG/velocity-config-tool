@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.wandrell.velocity.tool;
+package com.bernardomg.velocity.tool;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 

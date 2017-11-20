@@ -9,7 +9,7 @@
    <!-- ********************************************** -->
 
    <parent>
-      <groupId>com.wandrell.maven</groupId>
+      <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
       <version>1.1.6</version>
    </parent>
@@ -18,7 +18,7 @@
    <!-- **************** PROJECT INFO **************** -->
    <!-- ********************************************** -->
 
-   <groupId>com.wandrell.velocity</groupId>
+   <groupId>com.bernardomg.velocity</groupId>
    <artifactId>velocity-config-tool</artifactId>
    <version>1.0.1-SNAPSHOT</version>
    <packaging>jar</packaging>
@@ -59,9 +59,6 @@
    </ciManagement>
 
    <distributionManagement>
-      <relocation>
-         <groupId>com.bernardomg.velocity</groupId>
-      </relocation>
       <repository>
          <uniqueVersion>false</uniqueVersion>
          <id>releases</id>
@@ -93,7 +90,8 @@
             <site>
                <id>site</id>
                <name>Project Documentation Site</name>
-               <url>scp://docs.wandrell.com:2222/home1/duenco/www/maven/velocity-config-tool</url>
+               <!-- The URL should be set externally -->
+               <url>${site.release.url}</url>
             </site>
          </distributionManagement>
       </profile>
@@ -105,7 +103,8 @@
             <site>
                <id>site-development</id>
                <name>Project Development Documentation Site</name>
-               <url>scp://docs.wandrell.com:2222/home1/duenco/www/development/maven/velocity-config-tool</url>
+               <!-- The URL should be set externally -->
+               <url>${site.develop.url}</url>
             </site>
          </distributionManagement>
       </profile>
@@ -133,7 +132,7 @@
       <developer>
          <id>bmg</id>
          <name>Bernardo Martínez Garrido</name>
-         <email>programming@wandrell.com</email>
+         <email>programming@bernardomg.com</email>
          <url>https://github.com/Bernardo-MG</url>
          <organization>Bernardo Martínez Garrido</organization>
          <organizationUrl>https://github.com/Bernardo-MG</organizationUrl>
@@ -160,7 +159,7 @@
       <!-- ============================================== -->
       <!-- =============== MANIFEST DATA ================ -->
       <!-- ============================================== -->
-      <manifest.name>com/wandrell/velocity/velocity-config-tool</manifest.name>
+      <manifest.name>com/bernardomg/velocity/velocity-config-tool</manifest.name>
       <!-- ============================================== -->
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
@@ -181,7 +180,7 @@
       <!-- ============================================== -->
       <site.skin.version>1.2.0</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/velocity-config-tool/view</bintrayURL>
-      <mavenURL>http://mvnrepository.com/artifact/com.wandrell.velocity/velocity-config-tool</mavenURL>
+      <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
    </properties>
 
    <!-- ********************************************** -->

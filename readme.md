@@ -4,7 +4,7 @@ Acquire the [Maven site skin][maven_site] configuration from a [Velocity][veloci
 
 This way any custom setting from the site.xml file can be used when generating the site pages.
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.wandrell.velocity/velocity-config-tool.svg)][maven-repo]
+[![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.velocity/velocity-config-tool.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/velocity-config-tool/images/download.svg)][bintray-repo]
 
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
@@ -121,11 +121,11 @@ The project has been released under the [MIT License][license].
 [velocity]: http://velocity.apache.org/
 
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/velocity-config-tool/view
-[maven-repo]: http://mvnrepository.com/artifact/com.wandrell.velocity/velocity-config-tool
+[maven-repo]: http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool
 [issues]: https://github.com/bernardo-mg/velocity-config-tool/issues
-[javadoc-develop]: http://docs.wandrell.com/development/maven/velocity-config-tool/apidocs
-[javadoc-release]: http://docs.wandrell.com/maven/velocity-config-tool/apidocs
+[javadoc-develop]: http://docs.bernardomg.com/development/maven/velocity-config-tool/apidocs
+[javadoc-release]: http://docs.bernardomg.com/maven/velocity-config-tool/apidocs
 [license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/bernardo-mg/velocity-config-tool
-[site-develop]: http://docs.wandrell.com/development/maven/velocity-config-tool
-[site-release]: http://docs.wandrell.com/maven/velocity-config-tool
+[site-develop]: http://docs.bernardomg.com/development/maven/velocity-config-tool
+[site-release]: http://docs.bernardomg.com/maven/velocity-config-tool

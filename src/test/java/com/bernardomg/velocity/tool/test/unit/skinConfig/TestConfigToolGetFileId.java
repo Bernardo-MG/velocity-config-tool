@@ -22,7 +22,7 @@
  * SOFTWARE.
  */
 
-package com.wandrell.velocity.tool.test.unit.skinConfig;
+package com.bernardomg.velocity.tool.test.unit.skinConfig;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,8 +31,8 @@ import org.apache.velocity.tools.ToolContext;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.wandrell.velocity.tool.ConfigTool;
-import com.wandrell.velocity.tool.ConfigToolConstants;
+import com.bernardomg.velocity.tool.ConfigTool;
+import com.bernardomg.velocity.tool.ConfigToolConstants;
 
 /**
  * Unit tests for {@link ConfigTool}, testing the {@code getFileId} method.
