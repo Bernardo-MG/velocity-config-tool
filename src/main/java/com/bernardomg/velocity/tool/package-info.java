@@ -25,4 +25,4 @@
  * Provides Velocity tools classes.
  */
 
-package com.wandrell.velocity.tool;
+package com.bernardomg.velocity.tool;

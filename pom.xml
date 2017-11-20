@@ -9,18 +9,18 @@
    <!-- ********************************************** -->
 
    <parent>
-      <groupId>com.wandrell.maven</groupId>
+      <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.1.4</version>
+      <version>1.2.0</version>
    </parent>
 
    <!-- ********************************************** -->
    <!-- **************** PROJECT INFO **************** -->
    <!-- ********************************************** -->
 
-   <groupId>com.wandrell.velocity</groupId>
+   <groupId>com.bernardomg.velocity</groupId>
    <artifactId>velocity-config-tool</artifactId>
-   <version>1.0.0</version>
+   <version>1.1.0</version>
    <packaging>jar</packaging>
 
    <name>Velocity config tool</name>
@@ -79,40 +79,6 @@
 
    <profiles>
       <profile>
-         <!-- Profile for the Eclipse Maven plugin -->
-         <!-- Sets the POM so this plugin does not give the usual unregistered 
-            goals errors -->
-         <!-- It will be activated automatically on Eclipse if this has the 
-            m2e plugin, by detecting the version property -->
-         <id>eclipse-maven</id>
-         <activation>
-            <property>
-               <name>m2e.version</name>
-            </property>
-         </activation>
-         <build>
-            <pluginManagement>
-               <plugins>
-                  <plugin>
-                     <!-- m2e lifecycle mapping -->
-                     <!-- This is used to configure the Maven plugin for 
-                        Eclipse. -->
-                     <!-- Among other things, it allows registering goals, 
-                        which Eclipse would otherwise reject. -->
-                     <!-- It has no real effect on Maven. -->
-                     <groupId>org.eclipse.m2e</groupId>
-                     <artifactId>lifecycle-mapping</artifactId>
-                     <version>${plugin.lifecycle.version}</version>
-                     <configuration>
-                        <downloadSources>true</downloadSources>
-                        <downloadJavadocs>true</downloadJavadocs>
-                     </configuration>
-                  </plugin>
-               </plugins>
-            </pluginManagement>
-         </build>
-      </profile>
-      <profile>
          <!-- Release site deployment profile -->
          <!-- Sets the site repository to point to the releases repo -->
          <id>deployment-release</id>
@@ -124,7 +90,8 @@
             <site>
                <id>site</id>
                <name>Project Documentation Site</name>
-               <url>scp://docs.wandrell.com:2222/home1/duenco/www/maven/velocity-config-tool</url>
+               <!-- The URL should be set externally -->
+               <url>${site.release.url}</url>
             </site>
          </distributionManagement>
       </profile>
@@ -136,7 +103,8 @@
             <site>
                <id>site-development</id>
                <name>Project Development Documentation Site</name>
-               <url>scp://docs.wandrell.com:2222/home1/duenco/www/development/maven/velocity-config-tool</url>
+               <!-- The URL should be set externally -->
+               <url>${site.develop.url}</url>
             </site>
          </distributionManagement>
       </profile>
@@ -164,7 +132,7 @@
       <developer>
          <id>bmg</id>
          <name>Bernardo Martínez Garrido</name>
-         <email>programming@wandrell.com</email>
+         <email>programming@bernardomg.com</email>
          <url>https://github.com/Bernardo-MG</url>
          <organization>Bernardo Martínez Garrido</organization>
          <organizationUrl>https://github.com/Bernardo-MG</organizationUrl>
@@ -191,7 +159,7 @@
       <!-- ============================================== -->
       <!-- =============== MANIFEST DATA ================ -->
       <!-- ============================================== -->
-      <manifest.name>com/wandrell/velocity/velocity-config-tool</manifest.name>
+      <manifest.name>com/bernardomg/velocity/velocity-config-tool</manifest.name>
       <!-- ============================================== -->
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
@@ -210,9 +178,9 @@
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>0.6.0</site.skin.version>
+      <site.skin.version>1.2.0</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/velocity-config-tool/view</bintrayURL>
-      <mavenURL>http://mvnrepository.com/artifact/com.wandrell.velocity/velocity-config-tool</mavenURL>
+      <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
    </properties>
 
    <!-- ********************************************** -->
@@ -361,7 +329,7 @@
             <dependencies>
                <dependency>
                   <!-- Docs Maven Skin -->
-                  <groupId>com.wandrell.maven.skins</groupId>
+                  <groupId>com.bernardomg.maven.skins</groupId>
                   <artifactId>docs-maven-skin</artifactId>
                   <version>${site.skin.version}</version>
                </dependency>
