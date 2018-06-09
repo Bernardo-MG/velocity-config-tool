@@ -28,8 +28,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.velocity.tools.ToolContext;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolConstants;

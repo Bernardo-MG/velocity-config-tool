@@ -29,7 +29,7 @@ import java.util.Map;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolConstants;

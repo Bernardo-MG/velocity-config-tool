@@ -30,9 +30,9 @@ import java.util.Map;
 import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
 import org.codehaus.plexus.util.xml.Xpp3Dom;
+import org.junit.Assert;
+import org.junit.Test;
 import org.mockito.Mockito;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolConstants;
