@@ -29,7 +29,9 @@ import java.util.Map;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolConstants;
@@ -43,6 +45,7 @@ import com.bernardomg.velocity.tool.ConfigToolConstants;
  * @author Bernardo Mart&iacute;nez Garrido
  * @see ConfigTool
  */
+@RunWith(JUnitPlatform.class)
 public final class TestConfigToolConfigure {
 
     /**

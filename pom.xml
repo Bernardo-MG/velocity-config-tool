@@ -171,7 +171,8 @@
       <commons.validator.version>1.6</commons.validator.version>
       <doxia.decoration.version>1.8.1</doxia.decoration.version>
       <guava.version>27.1-jre</guava.version>
-      <junit.version>4.12</junit.version>
+      <junit.jupiter.version>5.4.0</junit.jupiter.version>
+      <junit.platform.version>1.4.0</junit.platform.version>
       <mockito.version>2.25.1</mockito.version>
       <plexus.version>3.1.0</plexus.version>
       <velocity.tools.version>2.0</velocity.tools.version>
@@ -272,10 +273,17 @@
       <!-- ======= TEST ENVIRONMENT DEPENDENCIES ======== -->
       <!-- ============================================== -->
       <dependency>
-         <!-- JUnit -->
-         <groupId>junit</groupId>
-         <artifactId>junit</artifactId>
-         <version>${junit.version}</version>
+         <!-- JUnit Jupiter Engine -->
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-engine</artifactId>
+         <version>${junit.jupiter.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <!-- JUnit Jupiter Platform -->
+         <groupId>org.junit.platform</groupId>
+         <artifactId>junit-platform-runner</artifactId>
+         <version>${junit.platform.version}</version>
          <scope>test</scope>
       </dependency>
       <dependency>
