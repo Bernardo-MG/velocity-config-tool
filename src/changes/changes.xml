@@ -26,5 +26,10 @@
             Updated dependencies.
          </action>
       </release>
+      <release version="1.2.0" date="2019-07-07" description="Dropped JDK7 support">
+         <action dev="bmg" type="remove">
+            Dropped JDK7 support
+         </action>
+      </release>
    </body>
 </document>

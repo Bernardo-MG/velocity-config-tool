@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.2.2</version>
+      <version>1.2.4</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -20,7 +20,7 @@
 
    <groupId>com.bernardomg.velocity</groupId>
    <artifactId>velocity-config-tool</artifactId>
-   <version>1.1.1</version>
+   <version>1.2.0</version>
    <packaging>jar</packaging>
 
    <name>Velocity config tool</name>
@@ -157,6 +157,10 @@
 
    <properties>
       <!-- ============================================== -->
+      <!-- ================ JAVA VERSION ================ -->
+      <!-- ============================================== -->
+      <java.version>1.8</java.version>
+      <!-- ============================================== -->
       <!-- =============== MANIFEST DATA ================ -->
       <!-- ============================================== -->
       <manifest.name>com/bernardomg/velocity/velocity-config-tool</manifest.name>
@@ -169,16 +173,17 @@
       <commons.digester.version>2.1</commons.digester.version>
       <commons.logging.version>1.2</commons.logging.version>
       <commons.validator.version>1.6</commons.validator.version>
-      <doxia.decoration.version>1.8.1</doxia.decoration.version>
-      <guava.version>20.0</guava.version>
-      <junit.version>4.12</junit.version>
-      <mockito.version>2.18.3</mockito.version>
-      <plexus.version>3.1.0</plexus.version>
+      <doxia.decoration.version>1.9.1</doxia.decoration.version>
+      <guava.version>28.0-jre</guava.version>
+      <junit.jupiter.version>5.5.0</junit.jupiter.version>
+      <junit.platform.version>1.5.0</junit.platform.version>
+      <mockito.version>2.28.2</mockito.version>
+      <plexus.version>3.2.0</plexus.version>
       <velocity.tools.version>2.0</velocity.tools.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>1.2.0</site.skin.version>
+      <site.skin.version>1.4.1</site.skin.version>
       <bintrayURL>https://bintray.com/bernardo-mg/maven/velocity-config-tool/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
    </properties>
@@ -272,10 +277,17 @@
       <!-- ======= TEST ENVIRONMENT DEPENDENCIES ======== -->
       <!-- ============================================== -->
       <dependency>
-         <!-- JUnit -->
-         <groupId>junit</groupId>
-         <artifactId>junit</artifactId>
-         <version>${junit.version}</version>
+         <!-- JUnit Jupiter Engine -->
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-engine</artifactId>
+         <version>${junit.jupiter.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <!-- JUnit Jupiter Platform -->
+         <groupId>org.junit.platform</groupId>
+         <artifactId>junit-platform-runner</artifactId>
+         <version>${junit.platform.version}</version>
          <scope>test</scope>
       </dependency>
       <dependency>

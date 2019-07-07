@@ -4,6 +4,8 @@ Acquire the [Maven site skin][maven_site] configuration from a [Velocity][veloci
 
 This way any custom setting from the site.xml file can be used when generating the site pages.
 
+It was created to be used by [Docs Maven Skin][docs-maven-skin].
+
 ## Dependant projects
 
 The tools were developed to be used by the [Docs Maven Skin][docs-skin].
@@ -41,4 +43,4 @@ And the keywords will be set into the template.
 [maven_site]: https://maven.apache.org/plugins/maven-site-plugin/
 [velocity]: http://velocity.apache.org/
 
-[tools]: ./tools.html
+[docs-maven-skin]: https://github.com/Bernardo-MG/docs-maven-skin

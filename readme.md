@@ -4,6 +4,8 @@ Acquire the [Maven site skin][maven_site] configuration from a [Velocity][veloci
 
 This way any custom setting from the site.xml file can be used when generating the site pages.
 
+It was created to be used by [Docs Maven Skin][docs-maven-skin].
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.velocity/velocity-config-tool.svg)][maven-repo]
 [![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/velocity-config-tool/images/download.svg)][bintray-repo]
 
@@ -119,6 +121,8 @@ The project has been released under the [MIT License][license].
 [maven_site]: https://maven.apache.org/plugins/maven-site-plugin/
 [reflow-skin]: https://github.com/andriusvelykis/reflow-maven-skin
 [velocity]: http://velocity.apache.org/
+
+[docs-maven-skin]: https://github.com/Bernardo-MG/docs-maven-skin
 
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/velocity-config-tool/view
 [maven-repo]: http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool
