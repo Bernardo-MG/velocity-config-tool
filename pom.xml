@@ -53,8 +53,8 @@
    </issueManagement>
 
    <ciManagement>
-      <system>Travis CI</system>
-      <url>https://travis-ci.org/Bernardo-MG/velocity-config-tool</url>
+      <system>Github Actions</system>
+      <url>https://github.com/Bernardo-MG/velocity-config-tool/actions</url>
       <notifiers />
    </ciManagement>
 
