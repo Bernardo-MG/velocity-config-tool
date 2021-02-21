@@ -391,16 +391,6 @@
                </rulesets>
             </configuration>
          </plugin>
-         <plugin>
-             <!-- SpotBugs -->
-             <!-- Checks for patterns which are prone to errors -->
-            <groupId>com.github.spotbugs</groupId>
-            <artifactId>spotbugs-maven-plugin</artifactId>
-            <configuration>
-               <!-- Exclusion patterns -->
-               <excludeFilterFile>${project.basedir}/src/config/spotbugs/spotbugs-exclude.xml</excludeFilterFile>
-            </configuration>
-         </plugin>
       </plugins>
    </reporting>
 
