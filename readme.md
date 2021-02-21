@@ -127,9 +127,9 @@ The project has been released under the [MIT License][license].
 [bintray-repo]: https://bintray.com/bernardo-mg/maven/velocity-config-tool/view
 [maven-repo]: http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool
 [issues]: https://github.com/bernardo-mg/velocity-config-tool/issues
-[javadoc-develop]: http://docs.bernardomg.com/development/maven/velocity-config-tool/apidocs
-[javadoc-release]: http://docs.bernardomg.com/maven/velocity-config-tool/apidocs
+[javadoc-develop]: https://docs.bernardomg.com/development/maven/velocity-config-tool/apidocs
+[javadoc-release]: https://docs.bernardomg.com/maven/velocity-config-tool/apidocs
 [license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/bernardo-mg/velocity-config-tool
-[site-develop]: http://docs.bernardomg.com/development/maven/velocity-config-tool
-[site-release]: http://docs.bernardomg.com/maven/velocity-config-tool
+[site-develop]: https://docs.bernardomg.com/development/maven/velocity-config-tool
+[site-release]: https://docs.bernardomg.com/maven/velocity-config-tool

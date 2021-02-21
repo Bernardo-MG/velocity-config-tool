@@ -31,5 +31,10 @@
             Dropped JDK7 support
          </action>
       </release>
+      <release version="1.2.1" date="2021-02-21" description="Updated dependencies">
+         <action dev="bmg" type="update">
+            Updated dependencies
+         </action>
+      </release>
    </body>
 </document>
