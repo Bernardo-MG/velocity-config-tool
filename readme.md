@@ -6,6 +6,8 @@ This way any custom setting from the site.xml file can be used when generating t
 
 It was created to be used by [Docs Maven Skin][docs-maven-skin].
 
+[![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.velocity/velocity-config-tool.svg)][maven-repo]
+
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
 [![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
 
