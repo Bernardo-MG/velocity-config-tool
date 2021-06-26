@@ -211,9 +211,9 @@
       <commons.collections.version>3.2.2</commons.collections.version>
       <commons.logging.version>1.2</commons.logging.version>
       <doxia.decoration.version>1.9.2</doxia.decoration.version>
-      <guava.version>30.1-jre</guava.version>
+      <guava.version>30.1.1-jre</guava.version>
       <junit.jupiter.version>5.7.1</junit.jupiter.version>
-      <mockito.version>3.7.7</mockito.version>
+      <mockito.version>3.11.2</mockito.version>
       <plexus.version>3.3.0</plexus.version>
       <velocity.tools.version>2.0</velocity.tools.version>
       <!-- ============================================== -->
