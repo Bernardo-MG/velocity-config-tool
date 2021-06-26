@@ -6,9 +6,6 @@ This way any custom setting from the site.xml file can be used when generating t
 
 It was created to be used by [Docs Maven Skin][docs-maven-skin].
 
-[![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.velocity/velocity-config-tool.svg)][maven-repo]
-[![Bintray](https://api.bintray.com/packages/bernardo-mg/maven/velocity-config-tool/images/download.svg)][bintray-repo]
-
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
 [![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
 
@@ -91,7 +88,7 @@ All other dependencies are handled through Maven, and noted in the included POM 
 
 ### Installing
 
-The recommended way to install the project is by setting up your preferred dependencies manager. To get the configuration information for this check the [Bintray repository][bintray-repo], or the [Maven Central Repository][maven-repo].
+The recommended way to install the project is by setting it up as a dependency. To get the configuration information for this check the [Maven Central Repository][maven-repo].
 
 If for some reason manual installation is necessary, just use the following Maven command:
 
@@ -124,7 +121,6 @@ The project has been released under the [MIT License][license].
 
 [docs-maven-skin]: https://github.com/Bernardo-MG/docs-maven-skin
 
-[bintray-repo]: https://bintray.com/bernardo-mg/maven/velocity-config-tool/view
 [maven-repo]: http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool
 [issues]: https://github.com/bernardo-mg/velocity-config-tool/issues
 [javadoc-develop]: https://docs.bernardomg.com/development/maven/velocity-config-tool/apidocs
