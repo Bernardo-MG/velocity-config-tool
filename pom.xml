@@ -220,7 +220,6 @@
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
       <site.skin.version>2.2.1</site.skin.version>
-      <bintrayURL>https://bintray.com/bernardo-mg/maven/velocity-config-tool/view</bintrayURL>
       <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
    </properties>
 
