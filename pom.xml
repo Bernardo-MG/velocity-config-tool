@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.4.4</version>
+      <version>1.5.0</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -212,7 +212,7 @@
       <commons.logging.version>1.2</commons.logging.version>
       <doxia.decoration.version>1.9.2</doxia.decoration.version>
       <junit.jupiter.version>5.8.2</junit.jupiter.version>
-      <mockito.version>4.2.0</mockito.version>
+      <mockito.version>4.3.1</mockito.version>
       <plexus.version>3.3.0</plexus.version>
       <velocity.tools.version>2.0</velocity.tools.version>
       <!-- ============================================== -->
