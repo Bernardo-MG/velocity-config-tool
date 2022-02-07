@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.4.0</version>
+      <version>1.5.0</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -20,7 +20,7 @@
 
    <groupId>com.bernardomg.velocity</groupId>
    <artifactId>velocity-config-tool</artifactId>
-   <version>1.2.3</version>
+   <version>1.2.4</version>
    <packaging>jar</packaging>
 
    <name>Velocity config tool</name>
@@ -63,10 +63,13 @@
    <!-- ********************************************** -->
 
    <profiles>
+      <!-- ============================================== -->
+      <!-- ============ DEPLOYMENT PROFILES ============= -->
+      <!-- ============================================== -->
       <profile>
-         <!-- Release site deployment profile -->
+         <!-- Site deployment profile -->
          <!-- Sets the site repository to point to the releases repo -->
-         <id>deployment-release</id>
+         <id>deployment-site</id>
          <activation>
             <!-- Active by default so the repository appears in the reports -->
             <activeByDefault>true</activeByDefault>
@@ -76,31 +79,9 @@
                <id>site</id>
                <name>Project Documentation Site</name>
                <!-- The URL should be set externally -->
-               <url>${site.release.url}</url>
+               <url>${site.url}</url>
             </site>
          </distributionManagement>
-      </profile>
-      <profile>
-         <!-- Development site deployment profile -->
-         <!-- Sets the site repository to point to the development repo -->
-         <id>deployment-development</id>
-         <distributionManagement>
-            <site>
-               <id>site-development</id>
-               <name>Project Development Documentation Site</name>
-               <!-- The URL should be set externally -->
-               <url>${site.develop.url}</url>
-            </site>
-         </distributionManagement>
-      </profile>
-      <profile>
-         <!-- Deployment profile -->
-         <!-- Sets ups the environment for deployment -->
-         <id>deployment</id>
-         <properties>
-            <!-- Tests are skipped -->
-            <maven.test.skip>true</maven.test.skip>
-         </properties>
       </profile>
       <profile>
          <!-- Github deployment profile. -->
@@ -110,7 +91,7 @@
                <!-- Github repository -->
                <id>github</id>
                <name>GitHub Packages</name>
-               <url>https://maven.pkg.github.com/Bernardo-MG/velocity-config-tool</url>
+               <url>https://maven.pkg.github.com/Bernardo-MG/docs-maven-skin</url>
             </repository>
          </distributionManagement>
       </profile>
@@ -211,15 +192,14 @@
       <commons.collections.version>3.2.2</commons.collections.version>
       <commons.logging.version>1.2</commons.logging.version>
       <doxia.decoration.version>1.9.2</doxia.decoration.version>
-      <guava.version>30.1.1-jre</guava.version>
-      <junit.jupiter.version>5.7.1</junit.jupiter.version>
-      <mockito.version>3.11.2</mockito.version>
+      <junit.jupiter.version>5.8.2</junit.jupiter.version>
+      <mockito.version>4.3.1</mockito.version>
       <plexus.version>3.3.0</plexus.version>
       <velocity.tools.version>2.0</velocity.tools.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.2.1</site.skin.version>
+      <site.skin.version>2.2.5</site.skin.version>
       <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
    </properties>
 
@@ -246,12 +226,6 @@
          <groupId>org.apache.maven.doxia</groupId>
          <artifactId>doxia-decoration-model</artifactId>
          <version>${doxia.decoration.version}</version>
-      </dependency>
-      <dependency>
-         <!-- Guava -->
-         <groupId>com.google.guava</groupId>
-         <artifactId>guava</artifactId>
-         <version>${guava.version}</version>
       </dependency>
       <dependency>
          <!-- Plexus Utils -->

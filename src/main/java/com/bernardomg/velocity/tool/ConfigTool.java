@@ -1,7 +1,7 @@
 /**
  * The MIT License (MIT)
  * <p>
- * Copyright (c) 2017 the original author or authors.
+ * Copyright (c) 2017-2021 the original author or authors.
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,8 +24,7 @@
 
 package com.bernardomg.velocity.tool;
 
-import static com.google.common.base.Preconditions.checkNotNull;
-
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
@@ -116,7 +115,7 @@ public final class ConfigTool extends SafeConfig {
      *         configuration
      */
     public final Xpp3Dom get(final String property) {
-        checkNotNull(property, "Received a null pointer as property");
+        Objects.requireNonNull(property, "Received a null pointer as property");
 
         return getSkinConfig().getChild(property);
     }
@@ -282,7 +281,7 @@ public final class ConfigTool extends SafeConfig {
         final String separator; // Separator for swapping whitespaces
         String corrected;       // Modified string
 
-        checkNotNull(text, "Received a null pointer as the text");
+        Objects.requireNonNull(text, "Received a null pointer as the text");
 
         separator = "-";
 
@@ -310,7 +309,7 @@ public final class ConfigTool extends SafeConfig {
         final ToolContext ctxt;       // Casted context
         final Object decorationObj;   // Value of the decoration key
 
-        checkNotNull(values, "Received a null pointer as values");
+        Objects.requireNonNull(values, "Received a null pointer as values");
 
         velocityContext = values.get(ConfigToolConstants.VELOCITY_CONTEXT_KEY);
 
