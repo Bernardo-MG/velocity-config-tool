@@ -91,7 +91,7 @@
                <!-- Github repository -->
                <id>github</id>
                <name>GitHub Packages</name>
-               <url>https://maven.pkg.github.com/Bernardo-MG/docs-maven-skin</url>
+               <url>https://maven.pkg.github.com/Bernardo-MG/velocity-config-tool</url>
             </repository>
          </distributionManagement>
       </profile>
