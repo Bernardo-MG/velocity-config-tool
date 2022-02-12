@@ -31,23 +31,14 @@ import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
 import org.codehaus.plexus.util.xml.Xpp3Dom;
 import org.junit.Assert;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolConstants;
 
-/**
- * Unit tests for {@link ConfigTool}, testing the {@code get} method.
- * <p>
- * These test use an invalid context, missing part of the required data.
- * 
- * @author Bernardo Mart&iacute;nez Garrido
- * @see ConfigTool
- */
-@RunWith(JUnitPlatform.class)
+@DisplayName("Getting configuration with missing data")
 public final class TestConfigToolGetMissingData {
 
     /**
@@ -57,10 +48,8 @@ public final class TestConfigToolGetMissingData {
         super();
     }
 
-    /**
-     * Tests that the get method returns a null for not existing values.
-     */
     @Test
+    @DisplayName("When missing skin configuration no data is returned")
     public final void testGet_NoSkinConfig_ReturnsNull() {
         final ConfigTool util; // Utilities class to test
 

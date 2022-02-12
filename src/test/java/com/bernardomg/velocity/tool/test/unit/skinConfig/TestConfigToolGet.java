@@ -31,21 +31,14 @@ import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
 import org.codehaus.plexus.util.xml.Xpp3Dom;
 import org.junit.Assert;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolConstants;
 
-/**
- * Unit tests for {@link ConfigTool}, testing the {@code get} method.
- * 
- * @author Bernardo Mart&iacute;nez Garrido
- * @see ConfigTool
- */
-@RunWith(JUnitPlatform.class)
+@DisplayName("Getting configuration")
 public final class TestConfigToolGet {
 
     /**
@@ -55,10 +48,8 @@ public final class TestConfigToolGet {
         super();
     }
 
-    /**
-     * Tests that the get method returns a node with the the expected key.
-     */
     @Test
+    @DisplayName("Returns the expected key")
     public final void testGet_ExpectedKey() {
         final ConfigTool util; // Utilities class to test
 
@@ -67,10 +58,8 @@ public final class TestConfigToolGet {
         Assert.assertEquals(util.get("key").getName(), "key");
     }
 
-    /**
-     * Tests that the get method returns a node with the the expected value.
-     */
     @Test
+    @DisplayName("Returns the expected value")
     public final void testGet_ExpectedValue() {
         final ConfigTool util; // Utilities class to test
 
@@ -79,10 +68,8 @@ public final class TestConfigToolGet {
         Assert.assertEquals(util.get("key").getValue(), "value");
     }
 
-    /**
-     * Tests that the get method returns a null for not existing values.
-     */
     @Test
+    @DisplayName("When no data exists for the key a null is returned")
     public final void testGet_NotExisting_ReturnsNull() {
         final ConfigTool util; // Utilities class to test
 

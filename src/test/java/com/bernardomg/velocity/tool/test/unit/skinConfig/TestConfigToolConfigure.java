@@ -29,23 +29,13 @@ import java.util.Map;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolConstants;
 
-/**
- * Unit tests for {@link ConfigTool}, testing the {@code configure} method to
- * make sure it can support various mostly invalid configurations.
- * <p>
- * These are just smoke tests to verify the class does not break in these cases.
- * 
- * @author Bernardo Mart&iacute;nez Garrido
- * @see ConfigTool
- */
-@RunWith(JUnitPlatform.class)
+@DisplayName("Setting configuration")
 public final class TestConfigToolConfigure {
 
     /**
@@ -55,10 +45,8 @@ public final class TestConfigToolConfigure {
         super();
     }
 
-    /**
-     * Tests that the configuration method supports an empty velocity context.
-     */
     @Test
+    @DisplayName("Accepts empty context")
     public final void test_EmptyContext() {
         final ConfigTool util;         // Utilities class to test
         final Map<Object, Object> map; // Configuration map
@@ -74,10 +62,8 @@ public final class TestConfigToolConfigure {
         util.configure(map);
     }
 
-    /**
-     * Tests that the configuration method supports an empty decoration.
-     */
     @Test
+    @DisplayName("Accepts empty decoration")
     public final void test_EmptyDecoration() {
         final ConfigTool util;         // Utilities class to test
         final Map<Object, Object> map; // Configuration map
@@ -97,10 +83,8 @@ public final class TestConfigToolConfigure {
         util.configure(map);
     }
 
-    /**
-     * Tests that the configuration method supports an empty map.
-     */
     @Test
+    @DisplayName("Accepts empty map")
     public final void test_EmptyMap() {
         final ConfigTool util; // Utilities class to test
 
