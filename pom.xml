@@ -11,7 +11,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.5.0</version>
+      <version>1.5.1</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -20,7 +20,7 @@
 
    <groupId>com.bernardomg.velocity</groupId>
    <artifactId>velocity-config-tool</artifactId>
-   <version>1.2.4</version>
+   <version>1.2.5</version>
    <packaging>jar</packaging>
 
    <name>Velocity config tool</name>
@@ -188,18 +188,18 @@
       <!-- ============================================== -->
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
-      <commons.beanUtils.version>1.9.4</commons.beanUtils.version>
+      <commons.beanUtils.version>1.9.3</commons.beanUtils.version>
       <commons.collections.version>3.2.2</commons.collections.version>
       <commons.logging.version>1.2</commons.logging.version>
       <doxia.decoration.version>1.9.2</doxia.decoration.version>
       <junit.jupiter.version>5.8.2</junit.jupiter.version>
-      <mockito.version>4.3.1</mockito.version>
+      <mockito.version>4.6.1</mockito.version>
       <plexus.version>3.3.0</plexus.version>
       <velocity.tools.version>2.0</velocity.tools.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.2.5</site.skin.version>
+      <site.skin.version>2.2.6</site.skin.version>
       <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
    </properties>
 

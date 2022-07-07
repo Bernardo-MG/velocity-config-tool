@@ -29,20 +29,13 @@ import java.util.Map;
 
 import org.apache.velocity.tools.ToolContext;
 import org.junit.Assert;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolConstants;
 
-/**
- * Unit tests for {@link ConfigTool}, testing the {@code getFileId} method.
- * 
- * @author Bernardo Mart&iacute;nez Garrido
- * @see ConfigTool
- */
-@RunWith(JUnitPlatform.class)
+@DisplayName("Get file ID")
 public final class TestConfigToolGetFileId {
 
     /**
@@ -52,10 +45,8 @@ public final class TestConfigToolGetFileId {
         super();
     }
 
-    /**
-     * Tests that a file with consecutive points gives a slugged file id.
-     */
     @Test
+    @DisplayName("Consecutive points are transformed when slugging")
     public final void testGetFileId_ConsecutivePoints_Slugged() {
         final ConfigTool util; // Utilities class to test
 
@@ -64,10 +55,8 @@ public final class TestConfigToolGetFileId {
         Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
     }
 
-    /**
-     * Tests that an empty file gives an empty file id.
-     */
     @Test
+    @DisplayName("An empty file gives an empty slug")
     public final void testGetFileId_EmptyFile_EmptyId() {
         final ConfigTool util; // Utilities class to test
 
@@ -76,10 +65,8 @@ public final class TestConfigToolGetFileId {
         Assert.assertEquals(util.getFileId(), "");
     }
 
-    /**
-     * Tests that a file with multiple points gives a slugged file id.
-     */
     @Test
+    @DisplayName("Points are transformed when slugging")
     public final void testGetFileId_MultiplePoints_Slugged() {
         final ConfigTool util; // Utilities class to test
 
@@ -88,10 +75,8 @@ public final class TestConfigToolGetFileId {
         Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
     }
 
-    /**
-     * Tests that a file with multiple line separators gives a slugged file id.
-     */
     @Test
+    @DisplayName("Consecutive separators are transformed when slugging")
     public final void testGetFileId_MultipleSeparators_Slugged() {
         final ConfigTool util; // Utilities class to test
 
@@ -100,10 +85,8 @@ public final class TestConfigToolGetFileId {
         Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
     }
 
-    /**
-     * Tests that a file without extension gives a slugged file id.
-     */
     @Test
+    @DisplayName("Files with no extension are slugged")
     public final void testGetFileId_NoExtension_Slugged() {
         final ConfigTool util; // Utilities class to test
 
@@ -112,10 +95,8 @@ public final class TestConfigToolGetFileId {
         Assert.assertEquals(util.getFileId(), "path-to-file-name");
     }
 
-    /**
-     * Tests that a null file gives an empty file id.
-     */
     @Test
+    @DisplayName("A null file gives an empty slug")
     public final void testGetFileId_NullFile_EmptyId() {
         final ConfigTool util; // Utilities class to test
 
@@ -124,10 +105,8 @@ public final class TestConfigToolGetFileId {
         Assert.assertEquals(util.getFileId(), "");
     }
 
-    /**
-     * Tests that a file with only an extension gives an empty id.
-     */
     @Test
+    @DisplayName("A file with only an extension gives an empty slug")
     public final void testGetFileId_OnlyExtension_Empty() {
         final ConfigTool util; // Utilities class to test
 
@@ -136,10 +115,8 @@ public final class TestConfigToolGetFileId {
         Assert.assertEquals(util.getFileId(), "");
     }
 
-    /**
-     * Tests that a valid file gives a slugged file id.
-     */
     @Test
+    @DisplayName("A valid file gives a slugged file ID")
     public final void testGetFileId_ValidFile_Slugged() {
         final ConfigTool util; // Utilities class to test
 

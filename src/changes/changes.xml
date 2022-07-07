@@ -49,7 +49,7 @@
             Updated deployment config.
          </action>
       </release>
-      <release version="1.2.4" date="2022-02-07" description="">
+      <release version="1.2.4" date="2022-02-07" description="Updated dependencies">
          <action dev="bmg" type="update">
             Updated dependencies.
          </action>
@@ -58,6 +58,11 @@
          </action>
          <action dev="bmg" type="update">
             Updated CI scripts.
+         </action>
+      </release>
+      <release version="1.2.5" date="2022-07-07" description="Updated dependencies">
+         <action dev="bmg" type="update">
+            Updated dependencies.
          </action>
       </release>
    </body>
