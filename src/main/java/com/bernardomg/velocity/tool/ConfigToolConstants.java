@@ -29,11 +29,11 @@ import org.apache.velocity.tools.config.DefaultKey;
 /**
  * Constants for the configuration tool.
  * <p>
- * The {@link #SKIN_KEY} field contains the name for the node containing the
- * configuration. Changing this will change the configuration location.
+ * The {@link #SKIN_KEY} field contains the name for the node containing the configuration. Changing this will change
+ * the configuration location.
  * <p>
  * All the other constants should not be modified.
- * 
+ *
  * @author Bernardo Mart&iacute;nez Garrido
  */
 @DefaultKey("config")
@@ -57,12 +57,10 @@ public final class ConfigToolConstants {
     /**
      * Key for the skin configuration.
      * <p>
-     * This is the name of the node inside the site.xml file where the skin's
-     * configuration is stored.
+     * This is the name of the node inside the site.xml file where the skin's configuration is stored.
      * <p>
-     * It will be a node inside the custom node, with the project node at the
-     * root, like this:
-     * 
+     * It will be a node inside the custom node, with the project node at the root, like this:
+     *
      * <pre>
      * {@code <project>
      *   <custom>
