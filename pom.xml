@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
    <modelVersion>4.0.0</modelVersion>
 
@@ -11,7 +10,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.5.1</version>
+      <version>1.5.3</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -188,18 +187,18 @@
       <!-- ============================================== -->
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
-      <commons.beanUtils.version>1.9.3</commons.beanUtils.version>
-      <commons.collections.version>3.2.2</commons.collections.version>
+      <commons.beanUtils.version>1.9.4</commons.beanUtils.version>
+      <commons.lang3.version>3.11</commons.lang3.version>
       <commons.logging.version>1.2</commons.logging.version>
-      <doxia.decoration.version>1.9.2</doxia.decoration.version>
-      <junit.jupiter.version>5.8.2</junit.jupiter.version>
-      <mockito.version>4.6.1</mockito.version>
+      <doxia.decoration.version>1.11.1</doxia.decoration.version>
+      <junit.jupiter.version>5.9.1</junit.jupiter.version>
+      <mockito.version>4.9.0</mockito.version>
       <plexus.version>3.3.0</plexus.version>
-      <velocity.tools.version>2.0</velocity.tools.version>
+      <velocity.tools.version>3.1</velocity.tools.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.2.6</site.skin.version>
+      <site.skin.version>2.2.7</site.skin.version>
       <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
    </properties>
 
@@ -235,23 +234,9 @@
       </dependency>
       <dependency>
          <!-- Velocity Tools -->
-         <groupId>org.apache.velocity</groupId>
-         <artifactId>velocity-tools</artifactId>
+         <groupId>org.apache.velocity.tools</groupId>
+         <artifactId>velocity-tools-generic</artifactId>
          <version>${velocity.tools.version}</version>
-         <exclusions>
-            <exclusion>
-               <groupId>org.apache.struts</groupId>
-               <artifactId>struts-core</artifactId>
-            </exclusion>
-            <exclusion>
-               <groupId>org.apache.struts</groupId>
-               <artifactId>struts-taglib</artifactId>
-            </exclusion>
-            <exclusion>
-               <groupId>org.apache.struts</groupId>
-               <artifactId>struts-tiles</artifactId>
-            </exclusion>
-         </exclusions>
       </dependency>
       <!-- ============================================== -->
       <!-- ============ ENFORCED DEPENDENCIES =========== -->
@@ -266,16 +251,16 @@
          <version>${commons.beanUtils.version}</version>
       </dependency>
       <dependency>
-         <!-- Commons Collections -->
-         <groupId>commons-collections</groupId>
-         <artifactId>commons-collections</artifactId>
-         <version>${commons.collections.version}</version>
-      </dependency>
-      <dependency>
          <!-- Commons Logging -->
          <groupId>commons-logging</groupId>
          <artifactId>commons-logging</artifactId>
          <version>${commons.logging.version}</version>
+      </dependency>
+      <dependency>
+         <!-- Commons Lang 3 -->
+         <groupId>org.apache.commons</groupId>
+         <artifactId>commons-lang3</artifactId>
+         <version>${commons.lang3.version}</version>
       </dependency>
       <!-- ============================================== -->
       <!-- ======= TEST ENVIRONMENT DEPENDENCIES ======== -->

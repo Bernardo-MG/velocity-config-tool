@@ -62,16 +62,16 @@ public final class TestConfigToolGetMissingData {
      * Returns the utilities class being tested, set up for the tests.
      * <p>
      * The contained configuration is missing the skin config node.
-     * 
+     *
      * @return the utilities class to test
      */
     private final ConfigTool getConfigToolNoSkinNode() {
-        final ConfigTool util;         // Utilities class to test
-        final Map<Object, Object> map; // Configuration map
-        final ToolContext context;     // Velocity context
-        final DecorationModel deco;    // Decoration model
-        final Xpp3Dom customNode;      // <custom> node
-        final String currentFile;      // Current page
+        final ConfigTool          util;        // Utilities class to test
+        final Map<String, Object> map;         // Configuration map
+        final ToolContext         context;     // Velocity context
+        final DecorationModel     deco;        // Decoration model
+        final Xpp3Dom             customNode;  // <custom> node
+        final String              currentFile; // Current page
 
         currentFile = "page";
 
@@ -80,7 +80,8 @@ public final class TestConfigToolGetMissingData {
 
         // Creates decoration model
         deco = Mockito.mock(DecorationModel.class);
-        Mockito.when(deco.getCustom()).thenReturn(customNode);
+        Mockito.when(deco.getCustom())
+            .thenReturn(customNode);
 
         // Creates utilities class
         util = new ConfigTool();
