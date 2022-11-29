@@ -127,15 +127,15 @@ public final class TestConfigToolGetFileId {
 
     /**
      * Returns the utilities class being tested, set up for the tests.
-     * 
+     *
      * @param fileName
      *            name of the current file
      * @return the utilities class to test
      */
     private final ConfigTool getConfigTool(final String fileName) {
-        final ConfigTool util;         // Utilities class to test
-        final Map<Object, Object> map; // Configuration map
-        final ToolContext context;     // Velocity context
+        final ConfigTool          util;    // Utilities class to test
+        final Map<String, Object> map;     // Configuration map
+        final ToolContext         context; // Velocity context
 
         util = new ConfigTool();
 

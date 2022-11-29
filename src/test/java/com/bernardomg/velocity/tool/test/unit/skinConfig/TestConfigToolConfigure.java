@@ -48,9 +48,9 @@ public final class TestConfigToolConfigure {
     @Test
     @DisplayName("Accepts empty context")
     public final void test_EmptyContext() {
-        final ConfigTool util;         // Utilities class to test
-        final Map<Object, Object> map; // Configuration map
-        final ToolContext context;     // Velocity context
+        final ConfigTool          util;    // Utilities class to test
+        final Map<String, Object> map;     // Configuration map
+        final ToolContext         context; // Velocity context
 
         util = new ConfigTool();
 
@@ -65,10 +65,10 @@ public final class TestConfigToolConfigure {
     @Test
     @DisplayName("Accepts empty decoration")
     public final void test_EmptyDecoration() {
-        final ConfigTool util;         // Utilities class to test
-        final Map<Object, Object> map; // Configuration map
-        final ToolContext context;     // Velocity context
-        final DecorationModel decoration;
+        final ConfigTool          util;      // Utilities class to test
+        final Map<String, Object> map;       // Configuration map
+        final ToolContext         context;   // Velocity context
+        final DecorationModel     decoration;
 
         util = new ConfigTool();
 
