@@ -33,7 +33,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.bernardomg.velocity.tool.ConfigTool;
-import com.bernardomg.velocity.tool.ConfigToolConstants;
+import com.bernardomg.velocity.tool.ConfigToolKeys;
 
 @DisplayName("Get file ID")
 public final class TestConfigToolGetFileId {
@@ -140,10 +140,10 @@ public final class TestConfigToolGetFileId {
         util = new ConfigTool();
 
         context = new ToolContext();
-        context.put(ConfigToolConstants.CURRENT_FILE_NAME_KEY, fileName);
+        context.put(ConfigToolKeys.CURRENT_FILE_NAME, fileName);
 
         map = new HashMap<>();
-        map.put(ConfigToolConstants.VELOCITY_CONTEXT_KEY, context);
+        map.put(ConfigToolKeys.VELOCITY_CONTEXT, context);
 
         util.configure(map);
 

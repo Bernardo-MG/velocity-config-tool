@@ -25,26 +25,26 @@
 package com.bernardomg.velocity.tool;
 
 /**
- * Constants for the configuration tool.
+ * Key constants for the configuration tool.
  * <p>
- * The {@link #SKIN_KEY} field contains the name for the node containing the configuration. Changing this will change
- * the configuration location.
+ * The {@link #SKIN} field contains the name for the node containing the configuration. Changing this will change the
+ * configuration location.
  * <p>
  * All the other constants should not be modified.
  *
  * @author Bernardo Mart&iacute;nez Garrido
  */
-public final class ConfigToolConstants {
+public final class ConfigToolKeys {
 
     /**
      * The key identifying the current file name in the velocity context.
      */
-    public static final String CURRENT_FILE_NAME_KEY = "currentFileName";
+    public static final String CURRENT_FILE_NAME = "currentFileName";
 
     /**
      * The key identifying the decoration in the velocity context.
      */
-    public static final String DECORATION_KEY        = "decoration";
+    public static final String DECORATION        = "decoration";
 
     /**
      * Key for the skin configuration.
@@ -63,17 +63,17 @@ public final class ConfigToolConstants {
      * <p>
      * That is, if the default value of skinConfig is kept.
      */
-    public static final String SKIN_KEY              = "skinConfig";
+    public static final String SKIN              = "skinConfig";
 
     /**
      * The key identifying the velocity context.
      */
-    public static final String VELOCITY_CONTEXT_KEY  = "velocityContext";
+    public static final String VELOCITY_CONTEXT  = "velocityContext";
 
     /**
      * Private constructor to avoid initialization.
      */
-    private ConfigToolConstants() {
+    private ConfigToolKeys() {
         super();
     }
 

@@ -164,8 +164,8 @@ public final class ConfigTool extends SafeConfig {
         final String  id;
         String        currentFile;
 
-        if (context.containsKey(ConfigToolConstants.CURRENT_FILE_NAME_KEY)) {
-            currentFileObj = context.get(ConfigToolConstants.CURRENT_FILE_NAME_KEY);
+        if (context.containsKey(ConfigToolKeys.CURRENT_FILE_NAME)) {
+            currentFileObj = context.get(ConfigToolKeys.CURRENT_FILE_NAME);
             if (currentFileObj == null) {
                 id = "";
             } else {
@@ -208,7 +208,7 @@ public final class ConfigTool extends SafeConfig {
             customNode = (Xpp3Dom) customObj;
 
             // Acquires <skinConfig> node
-            skinNode = customNode.getChild(ConfigToolConstants.SKIN_KEY);
+            skinNode = customNode.getChild(ConfigToolKeys.SKIN);
 
             if (skinNode == null) {
                 skinConfig = new Xpp3Dom("");
@@ -270,14 +270,14 @@ public final class ConfigTool extends SafeConfig {
 
         Objects.requireNonNull(values, "Received a null pointer as values");
 
-        velocityContext = values.get(ConfigToolConstants.VELOCITY_CONTEXT_KEY);
+        velocityContext = values.get(ConfigToolKeys.VELOCITY_CONTEXT);
 
         if (velocityContext instanceof ToolContext) {
             ctxt = (ToolContext) velocityContext;
 
             loadFileId(ctxt);
 
-            decorationObj = ctxt.get(ConfigToolConstants.DECORATION_KEY);
+            decorationObj = ctxt.get(ConfigToolKeys.DECORATION);
             if (decorationObj instanceof DecorationModel) {
                 processDecoration((DecorationModel) decorationObj);
             }

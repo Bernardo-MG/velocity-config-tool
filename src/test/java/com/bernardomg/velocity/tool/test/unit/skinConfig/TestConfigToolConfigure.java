@@ -33,7 +33,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import com.bernardomg.velocity.tool.ConfigTool;
-import com.bernardomg.velocity.tool.ConfigToolConstants;
+import com.bernardomg.velocity.tool.ConfigToolKeys;
 
 @DisplayName("Setting configuration")
 public final class TestConfigToolConfigure {
@@ -57,7 +57,7 @@ public final class TestConfigToolConfigure {
         context = new ToolContext();
 
         map = new HashMap<>();
-        map.put(ConfigToolConstants.VELOCITY_CONTEXT_KEY, context);
+        map.put(ConfigToolKeys.VELOCITY_CONTEXT, context);
 
         util.configure(map);
     }
@@ -75,10 +75,10 @@ public final class TestConfigToolConfigure {
         decoration = new DecorationModel();
 
         context = new ToolContext();
-        context.put(ConfigToolConstants.DECORATION_KEY, decoration);
+        context.put(ConfigToolKeys.DECORATION, decoration);
 
         map = new HashMap<>();
-        map.put(ConfigToolConstants.VELOCITY_CONTEXT_KEY, context);
+        map.put(ConfigToolKeys.VELOCITY_CONTEXT, context);
 
         util.configure(map);
     }
