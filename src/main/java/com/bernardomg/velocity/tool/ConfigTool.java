@@ -24,6 +24,7 @@
 
 package com.bernardomg.velocity.tool;
 
+import java.util.Locale;
 import java.util.Objects;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
@@ -255,7 +256,7 @@ public final class ConfigTool extends SafeConfig {
         corrected = ConfigToolRegex.NON_LATIN.matcher(corrected)
             .replaceAll("");
 
-        return corrected.toLowerCase();
+        return corrected.toLowerCase(Locale.getDefault());
     }
 
     /**
