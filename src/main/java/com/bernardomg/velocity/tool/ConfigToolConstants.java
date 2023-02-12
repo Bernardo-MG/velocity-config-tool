@@ -47,11 +47,6 @@ public final class ConfigToolConstants {
     public static final String DECORATION_KEY        = "decoration";
 
     /**
-     * The key identifying the Maven project.
-     */
-    public static final String MAVEN_PROJECT_KEY     = "project";
-
-    /**
      * Key for the skin configuration.
      * <p>
      * This is the name of the node inside the site.xml file where the skin's configuration is stored.
