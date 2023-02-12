@@ -25,7 +25,6 @@
 package com.bernardomg.velocity.tool;
 
 import java.util.Objects;
-import java.util.regex.Pattern;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
@@ -67,17 +66,7 @@ public final class ConfigTool extends SafeConfig {
      * <p>
      * This is a slug created from the current file's name.
      */
-    private String        fileId;
-
-    /**
-     * Regex for multiple hyphens.
-     */
-    private final Pattern multipleHyphen = Pattern.compile("-+");
-
-    /**
-     * Regex for non-latin characters.
-     */
-    private final Pattern nonLatin       = Pattern.compile("[^\\w-]");
+    private String  fileId;
 
     /**
      * Skin configuration node.
@@ -85,12 +74,7 @@ public final class ConfigTool extends SafeConfig {
      * This contains the custom configuration for the skin, as set inside the site.xml file, inside the {@code <custom>}
      * node.
      */
-    private Xpp3Dom       skinConfig     = new Xpp3Dom("");
-
-    /**
-     * Regex for whitespaces.
-     */
-    private final Pattern whitespace     = Pattern.compile("[\\s]");
+    private Xpp3Dom skinConfig = new Xpp3Dom("");
 
     /**
      * Constructs an instance of the {@code ConfigTool}.
@@ -112,7 +96,7 @@ public final class ConfigTool extends SafeConfig {
     public final Xpp3Dom get(final String property) {
         Objects.requireNonNull(property, "Received a null pointer as property");
 
-        return getSkinConfig().getChild(property);
+        return skinConfig.getChild(property);
     }
 
     /**
@@ -126,45 +110,6 @@ public final class ConfigTool extends SafeConfig {
      */
     public final String getFileId() {
         return fileId;
-    }
-
-    /**
-     * Returns the regular expression for multiple hyphens.
-     *
-     * @return the regular expression for multiple hyphens
-     */
-    private final Pattern getMultipleHyphenPattern() {
-        return multipleHyphen;
-    }
-
-    /**
-     * Returns the non-latin characters regular expression.
-     *
-     * @return the non-latin characters regular expression
-     */
-    private final Pattern getNonLatinPattern() {
-        return nonLatin;
-    }
-
-    /**
-     * Returns the skin config node.
-     * <p>
-     * This contains the custom configuration for the skin, as set inside the site.xml file, inside the {@code <custom>}
-     * node.
-     *
-     * @return the skin config node
-     */
-    private final Xpp3Dom getSkinConfig() {
-        return skinConfig;
-    }
-
-    /**
-     * Returns the regular expression for whitespaces.
-     *
-     * @return the regular expression for whitespaces
-     */
-    private final Pattern getWhitespacePattern() {
-        return whitespace;
     }
 
     /**
@@ -183,7 +128,7 @@ public final class ConfigTool extends SafeConfig {
         if (context.containsKey(ConfigToolConstants.CURRENT_FILE_NAME_KEY)) {
             currentFileObj = context.get(ConfigToolConstants.CURRENT_FILE_NAME_KEY);
             if (currentFileObj == null) {
-                setFileId("");
+                fileId = "";
             } else {
                 currentFile = String.valueOf(currentFileObj);
 
@@ -194,10 +139,10 @@ public final class ConfigTool extends SafeConfig {
                 }
 
                 // File name is slugged
-                setFileId(slug(currentFile));
+                fileId = slug(currentFile);
             }
         } else {
-            setFileId("");
+            fileId = "";
         }
     }
 
@@ -225,31 +170,11 @@ public final class ConfigTool extends SafeConfig {
             skinNode = customNode.getChild(ConfigToolConstants.SKIN_KEY);
 
             if (skinNode == null) {
-                setSkinConfig(new Xpp3Dom(""));
+                skinConfig = new Xpp3Dom("");
             } else {
-                setSkinConfig(skinNode);
+                skinConfig = skinNode;
             }
         }
-    }
-
-    /**
-     * Sets the identifier for the current file.
-     *
-     * @param id
-     *            the identifier for the current file
-     */
-    private final void setFileId(final String id) {
-        fileId = id;
-    }
-
-    /**
-     * Sets the skin config node.
-     *
-     * @param config
-     *            the skin config node.
-     */
-    private final void setSkinConfig(final Xpp3Dom config) {
-        skinConfig = config;
     }
 
     /**
@@ -281,13 +206,13 @@ public final class ConfigTool extends SafeConfig {
             .replace('_', '-');
 
         // Removes multiple lines
-        corrected = getMultipleHyphenPattern().matcher(corrected)
+        corrected = ConfigToolRegex.MULTIPLE_HYPHEN.matcher(corrected)
             .replaceAll(separator);
         // Removes white spaces
-        corrected = getWhitespacePattern().matcher(corrected)
+        corrected = ConfigToolRegex.WHITESPACE.matcher(corrected)
             .replaceAll(separator);
         // Removes non-latin characters
-        corrected = getNonLatinPattern().matcher(corrected)
+        corrected = ConfigToolRegex.NON_LATIN.matcher(corrected)
             .replaceAll("");
 
         return corrected.toLowerCase();

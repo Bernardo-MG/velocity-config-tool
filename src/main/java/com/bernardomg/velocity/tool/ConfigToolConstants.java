@@ -24,8 +24,6 @@
 
 package com.bernardomg.velocity.tool;
 
-import org.apache.velocity.tools.config.DefaultKey;
-
 /**
  * Constants for the configuration tool.
  * <p>
@@ -36,7 +34,6 @@ import org.apache.velocity.tools.config.DefaultKey;
  *
  * @author Bernardo Mart&iacute;nez Garrido
  */
-@DefaultKey("config")
 public final class ConfigToolConstants {
 
     /**
