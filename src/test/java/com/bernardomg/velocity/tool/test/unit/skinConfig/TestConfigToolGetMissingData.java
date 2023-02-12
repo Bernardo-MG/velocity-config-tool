@@ -36,7 +36,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import com.bernardomg.velocity.tool.ConfigTool;
-import com.bernardomg.velocity.tool.ConfigToolConstants;
+import com.bernardomg.velocity.tool.ConfigToolKeys;
 
 @DisplayName("Getting configuration with missing data")
 public final class TestConfigToolGetMissingData {
@@ -88,12 +88,12 @@ public final class TestConfigToolGetMissingData {
 
         // Creates context
         context = new ToolContext();
-        context.put(ConfigToolConstants.DECORATION_KEY, deco);
-        context.put(ConfigToolConstants.CURRENT_FILE_NAME_KEY, currentFile);
+        context.put(ConfigToolKeys.DECORATION, deco);
+        context.put(ConfigToolKeys.CURRENT_FILE_NAME, currentFile);
 
         // Prepares configuration
         map = new HashMap<>();
-        map.put(ConfigToolConstants.VELOCITY_CONTEXT_KEY, context);
+        map.put(ConfigToolKeys.VELOCITY_CONTEXT, context);
 
         util.configure(map);
 
