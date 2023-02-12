@@ -191,14 +191,14 @@
       <commons.lang3.version>3.11</commons.lang3.version>
       <commons.logging.version>1.2</commons.logging.version>
       <doxia.decoration.version>1.11.1</doxia.decoration.version>
-      <junit.jupiter.version>5.9.1</junit.jupiter.version>
-      <mockito.version>4.9.0</mockito.version>
+      <junit.jupiter.version>5.9.2</junit.jupiter.version>
+      <mockito.version>5.1.1</mockito.version>
       <plexus.version>3.3.0</plexus.version>
       <velocity.tools.version>3.1</velocity.tools.version>
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.2.9</site.skin.version>
+      <site.skin.version>2.3.1</site.skin.version>
       <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
    </properties>
 
