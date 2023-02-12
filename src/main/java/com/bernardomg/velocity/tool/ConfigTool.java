@@ -121,14 +121,15 @@ public final class ConfigTool extends SafeConfig {
      *            the Velocity tools context
      */
     private final void loadFileId(final ToolContext context) {
-        final Integer lastDot;        // Location of the extension dot
-        final Object  currentFileObj; // File's name as received
-        String        currentFile;    // File's name
+        final Integer lastDot;
+        final Object  currentFileObj;
+        final String  id;
+        String        currentFile;
 
         if (context.containsKey(ConfigToolConstants.CURRENT_FILE_NAME_KEY)) {
             currentFileObj = context.get(ConfigToolConstants.CURRENT_FILE_NAME_KEY);
             if (currentFileObj == null) {
-                fileId = "";
+                id = "";
             } else {
                 currentFile = String.valueOf(currentFileObj);
 
@@ -139,11 +140,13 @@ public final class ConfigTool extends SafeConfig {
                 }
 
                 // File name is slugged
-                fileId = slug(currentFile);
+                id = slug(currentFile);
             }
         } else {
-            fileId = "";
+            id = "";
         }
+
+        fileId = id;
     }
 
     /**
@@ -155,9 +158,9 @@ public final class ConfigTool extends SafeConfig {
      *            decoration data
      */
     private final void processDecoration(final DecorationModel model) {
-        final Object  customObj;  // Object for the <custom> node
-        final Xpp3Dom customNode; // <custom> node
-        final Xpp3Dom skinNode;   // <skinConfig> node
+        final Object  customObj;
+        final Xpp3Dom customNode;
+        final Xpp3Dom skinNode;
 
         customObj = model.getCustom();
 
