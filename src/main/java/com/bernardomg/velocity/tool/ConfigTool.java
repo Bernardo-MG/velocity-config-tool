@@ -113,6 +113,43 @@ public final class ConfigTool extends SafeConfig {
     }
 
     /**
+     * Returns the skin configuration node.
+     * <p>
+     * This contains the custom configuration for the skin, as set inside the site.xml file, inside the {@code <custom>}
+     * node.
+     *
+     * @return the skin configuration node
+     */
+    public final Xpp3Dom getSkinConfig() {
+        return skinConfig;
+    }
+
+    /**
+     * Sets the file identifier.
+     * <p>
+     * This is a slugged version of the current file name.
+     *
+     * @param id
+     *            file identifier
+     */
+    public final void setFileId(final String id) {
+        fileId = id;
+    }
+
+    /**
+     * Sets the skin configuration node.
+     * <p>
+     * This contains the custom configuration for the skin, as set inside the site.xml file, inside the {@code <custom>}
+     * node.
+     *
+     * @param config
+     *            skin configuration node
+     */
+    public final void setSkinConfig(final Xpp3Dom config) {
+        skinConfig = config;
+    }
+
+    /**
      * Loads the file identifier from the velocity tools context.
      * <p>
      * This is generated from the file's name.
