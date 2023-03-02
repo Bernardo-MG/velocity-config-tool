@@ -55,8 +55,8 @@ public final class TestConfigToolGet {
 
         util = getConfigTool("key", "value");
 
-        Assert.assertEquals(util.get("key")
-            .getName(), "key");
+        Assert.assertEquals("key", util.get("key")
+            .getName());
     }
 
     @Test
@@ -66,8 +66,8 @@ public final class TestConfigToolGet {
 
         util = getConfigTool("key", "value");
 
-        Assert.assertEquals(util.get("key")
-            .getValue(), "value");
+        Assert.assertEquals("value", util.get("key")
+            .getValue());
     }
 
     @Test
@@ -77,7 +77,7 @@ public final class TestConfigToolGet {
 
         util = getConfigTool("", "");
 
-        Assert.assertEquals(util.get("key"), null);
+        Assert.assertNull(util.get("key"));
     }
 
     /**

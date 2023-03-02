@@ -55,7 +55,7 @@ public final class TestConfigToolGetMissingData {
 
         util = getConfigToolNoSkinNode();
 
-        Assert.assertEquals(util.get("key"), null);
+        Assert.assertNull(util.get("key"));
     }
 
     /**
