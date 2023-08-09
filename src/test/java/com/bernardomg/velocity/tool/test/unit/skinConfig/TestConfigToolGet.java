@@ -24,6 +24,8 @@
 
 package com.bernardomg.velocity.tool.test.unit.skinConfig;
 
+import static org.mockito.BDDMockito.given;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +35,19 @@ import org.codehaus.plexus.util.xml.Xpp3Dom;
 import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.bernardomg.velocity.tool.ConfigTool;
 import com.bernardomg.velocity.tool.ConfigToolKeys;
 
+@ExtendWith(MockitoExtension.class)
 @DisplayName("Getting configuration")
 public final class TestConfigToolGet {
+
+    @Mock
+    private DecorationModel deco;
 
     /**
      * Default constructor.
@@ -93,7 +101,6 @@ public final class TestConfigToolGet {
         final ConfigTool          util;        // Utilities class to test
         final Map<String, Object> map;         // Configuration map
         final ToolContext         context;     // Velocity context
-        final DecorationModel     deco;        // Decoration model
         final Xpp3Dom             customNode;  // <custom> node
         final Xpp3Dom             skinNode;    // <skinConfig> node
         final Xpp3Dom             valueNode;   // Node with the test value
@@ -114,9 +121,7 @@ public final class TestConfigToolGet {
         customNode.addChild(skinNode);
 
         // Creates decoration model
-        deco = Mockito.mock(DecorationModel.class);
-        Mockito.when(deco.getCustom())
-            .thenReturn(customNode);
+        given(deco.getCustom()).willReturn(customNode);
 
         // Creates utilities class
         util = new ConfigTool();
