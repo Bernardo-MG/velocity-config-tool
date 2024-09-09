@@ -8,9 +8,6 @@ It was created to be used by [Docs Maven Skin][docs-maven-skin].
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.bernardomg.velocity/velocity-config-tool.svg)][maven-repo]
 
-[![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
-[![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
-
 ## Features
 
 - No additional configuration, just add the dependency
