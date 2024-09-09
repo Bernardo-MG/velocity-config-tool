@@ -11,36 +11,11 @@ It was created to be used by [Docs Maven Skin][docs-maven-skin].
 [![Release docs](https://img.shields.io/badge/docs-release-blue.svg)][site-release]
 [![Development docs](https://img.shields.io/badge/docs-develop-blue.svg)][site-develop]
 
-[![Release javadocs](https://img.shields.io/badge/javadocs-release-blue.svg)][javadoc-release]
-[![Development javadocs](https://img.shields.io/badge/javadocs-develop-blue.svg)][javadoc-develop]
-
 ## Features
 
 - No additional configuration, just add the dependency
 - Read Maven Skin data from the custom tag inside a Velocity template
 - Read general Maven Skin data, such as the current page id, easily inside a Velocity template
-
-## Documentation
-
-Documentation is always generated for the latest release, kept in the 'master' branch:
-
-- The [latest release documentation page][site-release].
-- The [the latest release Javadoc site][javadoc-release].
-
-Documentation is also generated from the latest snapshot, taken from the 'develop' branch:
-
-- The [the latest snapshot documentation page][site-develop].
-- The [the latest snapshot Javadoc site][javadoc-develop].
-
-### Building the docs
-
-The documentation site sources come along the source code (as it is a Maven site), so it is always possible to generate them using the following Maven command:
-
-```
-$ mvn verify site
-```
-
-The verify phase is required, as otherwise some of the reports won't be created.
 
 ## Acknowledgement
 
@@ -129,5 +104,3 @@ The project has been released under the [MIT License][license].
 [javadoc-release]: https://docs.bernardomg.com/maven/velocity-config-tool/apidocs
 [license]: http://www.opensource.org/licenses/mit-license.php
 [scm]: https://github.com/bernardo-mg/velocity-config-tool
-[site-develop]: https://docs.bernardomg.com/development/maven/velocity-config-tool
-[site-release]: https://docs.bernardomg.com/maven/velocity-config-tool

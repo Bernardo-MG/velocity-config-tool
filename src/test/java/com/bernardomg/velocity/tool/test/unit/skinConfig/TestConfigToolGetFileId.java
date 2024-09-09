@@ -1,7 +1,7 @@
 /**
  * The MIT License (MIT)
  * <p>
- * Copyright (c) 2017-2021 the original author or authors.
+ * Copyright (c) 2017-2023 the original author or authors.
  * <p>
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -52,7 +52,7 @@ public final class TestConfigToolGetFileId {
 
         util = getConfigTool("path-to\\file_name..something.html");
 
-        Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
+        Assert.assertEquals("path-to-file-name-something", util.getFileId());
     }
 
     @Test
@@ -62,7 +62,7 @@ public final class TestConfigToolGetFileId {
 
         util = getConfigTool("");
 
-        Assert.assertEquals(util.getFileId(), "");
+        Assert.assertEquals("", util.getFileId());
     }
 
     @Test
@@ -72,7 +72,7 @@ public final class TestConfigToolGetFileId {
 
         util = getConfigTool("path-to\\file_name.something.html");
 
-        Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
+        Assert.assertEquals("path-to-file-name-something", util.getFileId());
     }
 
     @Test
@@ -82,7 +82,7 @@ public final class TestConfigToolGetFileId {
 
         util = getConfigTool("path-to\\file_name---something.html");
 
-        Assert.assertEquals(util.getFileId(), "path-to-file-name-something");
+        Assert.assertEquals("path-to-file-name-something", util.getFileId());
     }
 
     @Test
@@ -92,7 +92,7 @@ public final class TestConfigToolGetFileId {
 
         util = getConfigTool("path-to\\file_name");
 
-        Assert.assertEquals(util.getFileId(), "path-to-file-name");
+        Assert.assertEquals("path-to-file-name", util.getFileId());
     }
 
     @Test
@@ -102,7 +102,7 @@ public final class TestConfigToolGetFileId {
 
         util = getConfigTool(null);
 
-        Assert.assertEquals(util.getFileId(), "");
+        Assert.assertEquals("", util.getFileId());
     }
 
     @Test
@@ -112,7 +112,7 @@ public final class TestConfigToolGetFileId {
 
         util = getConfigTool(".html");
 
-        Assert.assertEquals(util.getFileId(), "");
+        Assert.assertEquals("", util.getFileId());
     }
 
     @Test
@@ -122,7 +122,7 @@ public final class TestConfigToolGetFileId {
 
         util = getConfigTool("path-to\\file_name.html");
 
-        Assert.assertEquals(util.getFileId(), "path-to-file-name");
+        Assert.assertEquals("path-to-file-name", util.getFileId());
     }
 
     /**

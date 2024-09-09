@@ -10,7 +10,7 @@
    <parent>
       <groupId>com.bernardomg.maven</groupId>
       <artifactId>base-pom</artifactId>
-      <version>1.5.3</version>
+      <version>1.5.4</version>
    </parent>
 
    <!-- ********************************************** -->
@@ -19,7 +19,7 @@
 
    <groupId>com.bernardomg.velocity</groupId>
    <artifactId>velocity-config-tool</artifactId>
-   <version>1.3.1</version>
+   <version>1.3.2</version>
    <packaging>jar</packaging>
 
    <name>Velocity config tool</name>
@@ -184,12 +184,12 @@
       <!-- =========== DEPENDENCIES VERSIONS ============ -->
       <!-- ============================================== -->
       <commons.beanUtils.version>1.9.4</commons.beanUtils.version>
-      <commons.lang3.version>3.11</commons.lang3.version>
-      <commons.logging.version>1.2</commons.logging.version>
+      <commons.lang3.version>3.17.0</commons.lang3.version>
+      <commons.logging.version>1.3.4</commons.logging.version>
       <doxia.decoration.version>1.11.1</doxia.decoration.version>
-      <junit.jupiter.version>5.9.2</junit.jupiter.version>
-      <mockito.version>5.1.1</mockito.version>
-      <plexus.version>3.3.0</plexus.version>
+      <junit.jupiter.version>5.11.0</junit.jupiter.version>
+      <mockito.version>5.13.0</mockito.version>
+      <plexus.version>4.0.1</plexus.version>
       <velocity.tools.version>3.1</velocity.tools.version>
       <!-- ============================================== -->
       <!-- ============ PLUGIN CONFIGURATION ============ -->
@@ -199,8 +199,9 @@
       <!-- ============================================== -->
       <!-- ================= MAVEN SITE ================= -->
       <!-- ============================================== -->
-      <site.skin.version>2.3.1</site.skin.version>
+      <site.skin.version>2.3.2</site.skin.version>
       <mavenURL>http://mvnrepository.com/artifact/com.bernardomg.velocity/velocity-config-tool</mavenURL>
+      <githubArtifactURL><![CDATA[https://github.com/Bernardo-MG?tab=packages&amp;repo_name=velocity-config-tool]]></githubArtifactURL>
    </properties>
 
    <!-- ********************************************** -->
@@ -228,9 +229,9 @@
          <version>${doxia.decoration.version}</version>
       </dependency>
       <dependency>
-         <!-- Plexus Utils -->
+         <!-- Plexus XML -->
          <groupId>org.codehaus.plexus</groupId>
-         <artifactId>plexus-utils</artifactId>
+         <artifactId>plexus-xml</artifactId>
          <version>${plexus.version}</version>
       </dependency>
       <dependency>
@@ -282,6 +283,13 @@
          <!-- Mockito -->
          <groupId>org.mockito</groupId>
          <artifactId>mockito-core</artifactId>
+         <version>${mockito.version}</version>
+         <scope>test</scope>
+      </dependency>
+      <dependency>
+         <!-- Mockito JUnit -->
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-junit-jupiter</artifactId>
          <version>${mockito.version}</version>
          <scope>test</scope>
       </dependency>
