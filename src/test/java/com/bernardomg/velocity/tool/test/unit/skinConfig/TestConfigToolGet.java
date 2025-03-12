@@ -31,8 +31,8 @@ import java.util.Map;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
+import org.assertj.core.api.Assertions;
 import org.codehaus.plexus.util.xml.Xpp3Dom;
-import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -54,38 +54,6 @@ public final class TestConfigToolGet {
      */
     public TestConfigToolGet() {
         super();
-    }
-
-    @Test
-    @DisplayName("Returns the expected key")
-    public final void testGet_ExpectedKey() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("key", "value");
-
-        Assert.assertEquals("key", util.get("key")
-            .getName());
-    }
-
-    @Test
-    @DisplayName("Returns the expected value")
-    public final void testGet_ExpectedValue() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("key", "value");
-
-        Assert.assertEquals("value", util.get("key")
-            .getValue());
-    }
-
-    @Test
-    @DisplayName("When no data exists for the key a null is returned")
-    public final void testGet_NotExisting_ReturnsNull() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("", "");
-
-        Assert.assertNull(util.get("key"));
     }
 
     /**
@@ -138,6 +106,48 @@ public final class TestConfigToolGet {
         util.configure(map);
 
         return util;
+    }
+
+    @Test
+    @DisplayName("Returns the expected key")
+    public final void testGet_ExpectedKey() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN + WHEN
+        util = getConfigTool("key", "value");
+
+        // THEN
+        Assertions.assertThat(util.get("key")
+            .getName())
+            .isEqualTo("key");
+    }
+
+    @Test
+    @DisplayName("Returns the expected value")
+    public final void testGet_ExpectedValue() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN + WHEN
+        util = getConfigTool("key", "value");
+
+        // THEN
+        Assertions.assertThat(util.get("key")
+            .getValue())
+            .isEqualTo("value");
+    }
+
+    @Test
+    @DisplayName("When no data exists for the key a null is returned")
+    public final void testGet_NotExisting_ReturnsNull() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN + WHEN
+        util = getConfigTool("", "");
+
+        // THEN
+        Assertions.assertThat(util.get("key")
+            .getName())
+            .isNull();
     }
 
 }

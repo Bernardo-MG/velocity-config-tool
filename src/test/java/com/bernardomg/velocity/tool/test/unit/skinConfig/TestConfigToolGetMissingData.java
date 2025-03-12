@@ -31,8 +31,8 @@ import java.util.Map;
 
 import org.apache.maven.doxia.site.decoration.DecorationModel;
 import org.apache.velocity.tools.ToolContext;
+import org.assertj.core.api.Assertions;
 import org.codehaus.plexus.util.xml.Xpp3Dom;
-import org.junit.Assert;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -54,16 +54,6 @@ public final class TestConfigToolGetMissingData {
      */
     public TestConfigToolGetMissingData() {
         super();
-    }
-
-    @Test
-    @DisplayName("When missing skin configuration no data is returned")
-    public final void testGet_NoSkinConfig_ReturnsNull() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigToolNoSkinNode();
-
-        Assert.assertNull(util.get("key"));
     }
 
     /**
@@ -103,6 +93,19 @@ public final class TestConfigToolGetMissingData {
         util.configure(map);
 
         return util;
+    }
+
+    @Test
+    @DisplayName("When missing skin configuration no data is returned")
+    public final void testGet_NoSkinConfig_ReturnsNull() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigToolNoSkinNode();
+
+        // WHEN + THEN
+        Assertions.assertThat(util.get("key"))
+            .isNull();
     }
 
 }

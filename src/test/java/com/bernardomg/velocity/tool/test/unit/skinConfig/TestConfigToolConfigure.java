@@ -52,6 +52,7 @@ public final class TestConfigToolConfigure {
         final Map<String, Object> map;     // Configuration map
         final ToolContext         context; // Velocity context
 
+        // GIVEN
         util = new ConfigTool();
 
         context = new ToolContext();
@@ -59,6 +60,7 @@ public final class TestConfigToolConfigure {
         map = new HashMap<>();
         map.put(ConfigToolKeys.VELOCITY_CONTEXT, context);
 
+        // WHEN + THEN
         util.configure(map);
     }
 
@@ -70,6 +72,7 @@ public final class TestConfigToolConfigure {
         final ToolContext         context;   // Velocity context
         final DecorationModel     decoration;
 
+        // GIVEN
         util = new ConfigTool();
 
         decoration = new DecorationModel();
@@ -80,6 +83,7 @@ public final class TestConfigToolConfigure {
         map = new HashMap<>();
         map.put(ConfigToolKeys.VELOCITY_CONTEXT, context);
 
+        // WHEN + THEN
         util.configure(map);
     }
 
@@ -88,8 +92,10 @@ public final class TestConfigToolConfigure {
     public final void test_EmptyMap() {
         final ConfigTool util; // Utilities class to test
 
+        // GIVEN
         util = new ConfigTool();
 
+        // WHEN + THEN
         util.configure(new HashMap<>());
     }
 

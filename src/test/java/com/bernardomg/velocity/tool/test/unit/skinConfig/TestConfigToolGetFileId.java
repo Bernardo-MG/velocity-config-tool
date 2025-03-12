@@ -28,7 +28,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.velocity.tools.ToolContext;
-import org.junit.Assert;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -43,86 +43,6 @@ public final class TestConfigToolGetFileId {
      */
     public TestConfigToolGetFileId() {
         super();
-    }
-
-    @Test
-    @DisplayName("Consecutive points are transformed when slugging")
-    public final void testGetFileId_ConsecutivePoints_Slugged() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("path-to\\file_name..something.html");
-
-        Assert.assertEquals("path-to-file-name-something", util.getFileId());
-    }
-
-    @Test
-    @DisplayName("An empty file gives an empty slug")
-    public final void testGetFileId_EmptyFile_EmptyId() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("");
-
-        Assert.assertEquals("", util.getFileId());
-    }
-
-    @Test
-    @DisplayName("Points are transformed when slugging")
-    public final void testGetFileId_MultiplePoints_Slugged() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("path-to\\file_name.something.html");
-
-        Assert.assertEquals("path-to-file-name-something", util.getFileId());
-    }
-
-    @Test
-    @DisplayName("Consecutive separators are transformed when slugging")
-    public final void testGetFileId_MultipleSeparators_Slugged() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("path-to\\file_name---something.html");
-
-        Assert.assertEquals("path-to-file-name-something", util.getFileId());
-    }
-
-    @Test
-    @DisplayName("Files with no extension are slugged")
-    public final void testGetFileId_NoExtension_Slugged() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("path-to\\file_name");
-
-        Assert.assertEquals("path-to-file-name", util.getFileId());
-    }
-
-    @Test
-    @DisplayName("A null file gives an empty slug")
-    public final void testGetFileId_NullFile_EmptyId() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool(null);
-
-        Assert.assertEquals("", util.getFileId());
-    }
-
-    @Test
-    @DisplayName("A file with only an extension gives an empty slug")
-    public final void testGetFileId_OnlyExtension_Empty() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool(".html");
-
-        Assert.assertEquals("", util.getFileId());
-    }
-
-    @Test
-    @DisplayName("A valid file gives a slugged file ID")
-    public final void testGetFileId_ValidFile_Slugged() {
-        final ConfigTool util; // Utilities class to test
-
-        util = getConfigTool("path-to\\file_name.html");
-
-        Assert.assertEquals("path-to-file-name", util.getFileId());
     }
 
     /**
@@ -148,6 +68,110 @@ public final class TestConfigToolGetFileId {
         util.configure(map);
 
         return util;
+    }
+
+    @Test
+    @DisplayName("Consecutive points are transformed when slugging")
+    public final void testGetFileId_ConsecutivePoints_Slugged() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigTool("path-to\\file_name..something.html");
+
+        // WHEN + THEN
+        Assertions.assertThat(util.getFileId())
+            .isEqualTo("path-to-file-name-something");
+    }
+
+    @Test
+    @DisplayName("An empty file gives an empty slug")
+    public final void testGetFileId_EmptyFile_EmptyId() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigTool("");
+
+        // WHEN + THEN
+        Assertions.assertThat(util.getFileId())
+            .isEqualTo("");
+    }
+
+    @Test
+    @DisplayName("Points are transformed when slugging")
+    public final void testGetFileId_MultiplePoints_Slugged() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigTool("path-to\\file_name.something.html");
+
+        // WHEN + THEN
+        Assertions.assertThat(util.getFileId())
+            .isEqualTo("path-to-file-name-something");
+    }
+
+    @Test
+    @DisplayName("Consecutive separators are transformed when slugging")
+    public final void testGetFileId_MultipleSeparators_Slugged() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigTool("path-to\\file_name---something.html");
+
+        // WHEN + THEN
+        Assertions.assertThat(util.getFileId())
+            .isEqualTo("path-to-file-name-something");
+    }
+
+    @Test
+    @DisplayName("Files with no extension are slugged")
+    public final void testGetFileId_NoExtension_Slugged() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigTool("path-to\\file_name");
+
+        // WHEN + THEN
+        Assertions.assertThat(util.getFileId())
+            .isEqualTo("path-to-file-name");
+    }
+
+    @Test
+    @DisplayName("A null file gives an empty slug")
+    public final void testGetFileId_NullFile_EmptyId() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigTool(null);
+
+        // WHEN + THEN
+        Assertions.assertThat(util.getFileId())
+            .isEqualTo("");
+    }
+
+    @Test
+    @DisplayName("A file with only an extension gives an empty slug")
+    public final void testGetFileId_OnlyExtension_Empty() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigTool(".html");
+
+        // WHEN + THEN
+        Assertions.assertThat(util.getFileId())
+            .isEqualTo("");
+    }
+
+    @Test
+    @DisplayName("A valid file gives a slugged file ID")
+    public final void testGetFileId_ValidFile_Slugged() {
+        final ConfigTool util; // Utilities class to test
+
+        // GIVEN
+        util = getConfigTool("path-to\\file_name.html");
+
+        // WHEN + THEN
+        Assertions.assertThat(util.getFileId())
+            .isEqualTo("path-to-file-name");
     }
 
 }
